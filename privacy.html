@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Privacy Policy — Tamil Bible App</title>
+  <meta name="description" content="Privacy Policy for Tamil Bible App. Learn how we collect, use, and protect your personal data including Firebase Authentication, Firestore, Cloudinary, OneSignal, and Google Sign-In."/>
+  <meta name="robots" content="index, follow"/>
+  <link rel="canonical" href="https://tamilbibleapp.com/privacy.html"/>
+  <meta property="og:title" content="Privacy Policy — Tamil Bible App"/>
+  <meta property="og:description" content="How Tamil Bible App handles your personal data with Firebase, Cloudinary, Google Sign-In and OneSignal."/>
+  <meta property="og:url" content="https://tamilbibleapp.com/privacy.html"/>
+  <meta name="theme-color" content="#8b5cf6"/>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg"/>
+  <link rel="manifest" href="manifest.json"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<div id="loading-screen" role="status" aria-label="Loading">
+  <div class="loader-cross" aria-hidden="true"></div>
+  <p class="loader-text">Tamil Bible App</p>
+</div>
+<button id="scroll-top" aria-label="Scroll to top">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4l8 8h-6v8h-4v-8H4z"/></svg>
+</button>
+
+<nav class="navbar" role="navigation" aria-label="Main navigation">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo" aria-label="Tamil Bible App home">
+      <div class="nav-logo-icon" aria-hidden="true">✝</div>
+      <span class="nav-logo-text"><span>Tamil</span> Bible</span>
+    </a>
+    <ul class="nav-links" id="nav-menu" role="list">
+      <li><a href="index.html#features">Features</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="privacy.html" class="active">Privacy</a></li>
+      <li><a href="terms.html">Terms</a></li>
+      <li><a href="delete-account.html">Delete Account</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="https://play.google.com/store/apps/details?id=com.rpr.tamil_bible_app" class="btn-nav" target="_blank" rel="noopener">⬇ Download</a>
+      <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- ── Hero ── -->
+<section class="legal-hero" aria-labelledby="page-title">
+  <div class="blob blob-purple" style="width:400px;height:400px;top:-100px;right:-100px;" aria-hidden="true"></div>
+  <div class="container" style="position:relative;z-index:1;">
+    <div class="section-tag" style="margin:0 auto 16px;" aria-hidden="true">🔒 Legal</div>
+    <h1 class="section-title" id="page-title">Privacy <span class="grad">Policy</span></h1>
+    <p class="section-subtitle" style="margin:12px auto 20px;">How Tamil Bible App collects, uses, and protects your personal information.</p>
+    <div class="last-updated">🟢 Last updated: July 2026</div>
+  </div>
+</section>
+
+<!-- ── Body ── -->
+<main class="legal-body">
+  <div class="container">
+    <div class="legal-content">
+
+      <!-- TOC -->
+      <nav class="legal-toc" aria-label="Table of contents">
+        <h3>📋 Table of Contents</h3>
+        <ol role="list">
+          <li>Information We Collect</li>
+          <li>How We Use Your Information</li>
+          <li>Third-Party Services</li>
+          <li>Data Storage &amp; Security</li>
+          <li>User Rights</li>
+          <li>Children's Privacy</li>
+          <li>Data Retention</li>
+          <li>Changes to This Policy</li>
+          <li>Contact Us</li>
+        </ol>
+      </nav>
+
+      <div class="legal-section">
+        <p>This Privacy Policy describes how <strong>Tamil Bible App</strong> ("we", "us", or "our"), developed by RPR Development (package name: <code>com.rpr.tamil_bible_app</code>), collects, uses, and protects information when you use our Android application and this website.</p>
+        <p>By downloading or using Tamil Bible App, you agree to the collection and use of information in accordance with this policy.</p>
+      </div>
+
+      <!-- 1 -->
+      <div class="legal-section" id="section-1">
+        <h2>1. Information We Collect</h2>
+        <h3>1.1 Information You Provide</h3>
+        <ul>
+          <li><strong>Account Registration:</strong> When you register using Email and Password, we collect your display name, email address, and a hashed password managed by Firebase Authentication.</li>
+          <li><strong>Google Sign-In:</strong> When you sign in with Google, we receive your Google display name, email address, and Google profile photo URL from Google's OAuth service.</li>
+          <li><strong>Profile Information:</strong> You may optionally provide your profession and date of birth in your profile settings. You may upload a profile photo, which is stored on Cloudinary.</li>
+          <li><strong>Notes:</strong> Text notes and audio recordings you create are stored in Firebase Firestore and associated with your account.</li>
+          <li><strong>Prayer Requests:</strong> Prayer requests you submit (including whether they are submitted anonymously) are stored in Firebase Firestore.</li>
+          <li><strong>Feedback:</strong> Bug reports, suggestions, corrections, and feature requests you submit are stored in Firebase Firestore.</li>
+          <li><strong>Bookmarks &amp; Highlights:</strong> Bible verses you bookmark or highlight are stored in Firebase Firestore, linked to your account.</li>
+        </ul>
+        <h3>1.2 Information Collected Automatically</h3>
+        <ul>
+          <li><strong>Firebase Analytics:</strong> We use Firebase Analytics to collect anonymous usage data such as screen views, session duration, and feature usage to improve the app experience.</li>
+          <li><strong>Firebase Crashlytics:</strong> We use Firebase Crashlytics to collect crash reports and diagnostic data to identify and fix technical issues.</li>
+          <li><strong>Device Information:</strong> Platform (Android), device model, and app version information may be collected to provide technical support.</li>
+          <li><strong>Reading History:</strong> Your Bible reading progress (book, chapter, verse) is stored locally and synced to Firebase Firestore to restore your reading position.</li>
+          <li><strong>Push Notification Token:</strong> Your device push token (managed by OneSignal) is used to send you notifications you have opted into.</li>
+        </ul>
+      </div>
+
+      <!-- 2 -->
+      <div class="legal-section" id="section-2">
+        <h2>2. How We Use Your Information</h2>
+        <ul>
+          <li>To create and maintain your user account</li>
+          <li>To sync your notes, bookmarks, highlights, and reading progress across sessions</li>
+          <li>To display your profile information (name, photo, role) within the app</li>
+          <li>To deliver daily verses, ministry announcements, and updates published by the admin team</li>
+          <li>To send you push notifications for prayer requests, announcements, and reminders (only with your permission)</li>
+          <li>To process and respond to your feedback and support requests</li>
+          <li>To display prayer requests to the community (public requests only; anonymous requests hide your identity)</li>
+          <li>To analyse app usage patterns to improve features and fix bugs (via Firebase Analytics and Crashlytics)</li>
+          <li>To assign and enforce user roles (User, Admin, Super Admin) for access control</li>
+        </ul>
+      </div>
+
+      <!-- 3 -->
+      <div class="legal-section" id="section-3">
+        <h2>3. Third-Party Services</h2>
+        <p>Tamil Bible App integrates the following third-party services. Each service has its own Privacy Policy:</p>
+
+        <h3>3.1 Firebase (Google LLC)</h3>
+        <ul>
+          <li><strong>Firebase Authentication:</strong> Handles Email/Password and Google Sign-In authentication securely.</li>
+          <li><strong>Cloud Firestore:</strong> Stores user profiles, notes, audio notes, bookmarks, highlights, prayer requests, feedback, reading history, reminders, and app settings.</li>
+          <li><strong>Firebase Analytics:</strong> Collects anonymous usage statistics to improve app performance.</li>
+          <li><strong>Firebase Crashlytics:</strong> Collects crash reports and diagnostic data for stability improvements.</li>
+          <li><strong>Firebase Cloud Messaging (FCM):</strong> Delivers push notifications to your device.</li>
+        </ul>
+        <p><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase Privacy Policy →</a></p>
+
+        <h3>3.2 Google Sign-In (Google LLC)</h3>
+        <p>When you choose to sign in with Google, we receive your name, email address, and profile photo from Google's identity service. We use this information only to create and populate your Tamil Bible App profile.</p>
+        <p><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy →</a></p>
+
+        <h3>3.3 Cloudinary</h3>
+        <p>Profile photos uploaded by users are stored on Cloudinary's image hosting service. Images are accessed via secure HTTPS URLs. Cloudinary may process image metadata for optimisation.</p>
+        <p><a href="https://cloudinary.com/privacy" target="_blank" rel="noopener">Cloudinary Privacy Policy →</a></p>
+
+        <h3>3.4 OneSignal</h3>
+        <p>We use OneSignal to send push notifications to users who have granted notification permissions. OneSignal collects your device push token and may collect device type and OS version for notification delivery.</p>
+        <p><a href="https://onesignal.com/privacy_policy" target="_blank" rel="noopener">OneSignal Privacy Policy →</a></p>
+      </div>
+
+      <!-- 4 -->
+      <div class="legal-section" id="section-4">
+        <h2>4. Data Storage &amp; Security</h2>
+        <ul>
+          <li>All personal data is stored in Google Firebase Firestore, protected by role-based Firestore Security Rules.</li>
+          <li>Users can only read and write their own data. Admins have elevated read access for moderation purposes only.</li>
+          <li>User role fields are write-protected — users cannot modify their own role to escalate privileges.</li>
+          <li>Profile images are stored on Cloudinary over HTTPS with secure access URLs.</li>
+          <li>Cached data (profile image, name, role) may be stored locally using SharedPreferences for performance.</li>
+          <li>Audio notes are stored securely in Firebase Firestore with Cloudinary URLs.</li>
+          <li>We do not store passwords in plain text. Firebase Authentication handles all credential management.</li>
+          <li>While we implement industry-standard security measures, no method of internet transmission is 100% secure.</li>
+        </ul>
+      </div>
+
+      <!-- 5 -->
+      <div class="legal-section" id="section-5">
+        <h2>5. Your Rights</h2>
+        <p>Depending on your location, you may have the following rights regarding your personal data:</p>
+        <ul>
+          <li><strong>Access:</strong> Request a copy of the personal data we hold about you.</li>
+          <li><strong>Correction:</strong> Update your display name, profile photo, profession, and date of birth directly within the app Profile screen.</li>
+          <li><strong>Deletion:</strong> Request permanent deletion of your account and all associated data. See our <a href="delete-account.html">Account Deletion Policy</a> for details.</li>
+          <li><strong>Notification Opt-Out:</strong> You can disable push notifications at any time from the app's Notification Settings or your device's system settings.</li>
+          <li><strong>Anonymous Prayers:</strong> You may submit prayer requests anonymously without revealing your identity to other users.</li>
+        </ul>
+        <p>To exercise any of these rights, contact us at <a href="mailto:rprpradeesh@gmail.com">rprpradeesh@gmail.com</a>.</p>
+      </div>
+
+      <!-- 6 -->
+      <div class="legal-section" id="section-6">
+        <h2>6. Children's Privacy</h2>
+        <p>Tamil Bible App is not directed to children under the age of 13. We do not knowingly collect personal information from children under 13 without verifiable parental consent.</p>
+        <p>If you believe we have inadvertently collected information from a child under 13, please contact us immediately at <a href="mailto:rprpradeesh@gmail.com">rprpradeesh@gmail.com</a> and we will delete the information promptly.</p>
+      </div>
+
+      <!-- 7 -->
+      <div class="legal-section" id="section-7">
+        <h2>7. Data Retention</h2>
+        <ul>
+          <li>Your account data is retained as long as your account is active.</li>
+          <li>Notes, bookmarks, highlights, reading history, reminders, and prayer requests are retained until you delete them or request account deletion.</li>
+          <li>Upon account deletion, personal data is permanently removed from Firebase Authentication and Firestore within 30 days.</li>
+          <li>Cloudinary profile images are deleted upon account deletion request.</li>
+          <li>Anonymised analytics data collected by Firebase Analytics may be retained longer as it cannot be linked to an individual.</li>
+          <li>Crash reports collected by Firebase Crashlytics are retained for diagnostic purposes for up to 90 days.</li>
+        </ul>
+      </div>
+
+      <!-- 8 -->
+      <div class="legal-section" id="section-8">
+        <h2>8. Changes to This Policy</h2>
+        <p>We may update this Privacy Policy from time to time. When we make significant changes, we will notify users through a push notification or an in-app announcement. The "Last Updated" date at the top of this page will always reflect the most recent revision.</p>
+        <p>We encourage you to review this Privacy Policy periodically.</p>
+      </div>
+
+      <!-- 9 -->
+      <div class="legal-section" id="section-9">
+        <h2>9. Contact Us</h2>
+        <p>If you have any questions, concerns, or requests regarding this Privacy Policy or your personal data, please contact us:</p>
+        <ul>
+          <li><strong>Email:</strong> <a href="mailto:rprpradeesh@gmail.com">rprpradeesh@gmail.com</a></li>
+          <li><strong>App Package:</strong> com.rpr.tamil_bible_app</li>
+          <li><strong>Developer:</strong> RPR Development</li>
+          <li><strong>Contact Form:</strong> <a href="contact.html">Contact Page</a></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-bottom" style="border-top:none;padding:24px 0;">
+      <p>© 2026 Tamil Bible App • Powered by RPR</p>
+      <div class="footer-badges">
+        <a href="privacy.html" class="badge" style="color:var(--violet);border-color:rgba(139,92,246,.3);">Privacy Policy</a>
+        <a href="terms.html" class="badge">Terms</a>
+        <a href="delete-account.html" class="badge">Delete Account</a>
+        <a href="contact.html" class="badge">Contact</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

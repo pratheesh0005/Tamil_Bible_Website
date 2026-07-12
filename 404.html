@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>404 — Page Not Found | Tamil Bible App</title>
+  <meta name="robots" content="noindex, nofollow"/>
+  <meta name="theme-color" content="#8b5cf6"/>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<button id="scroll-top" aria-label="Scroll to top">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4l8 8h-6v8h-4v-8H4z"/></svg>
+</button>
+
+<nav class="navbar scrolled" role="navigation" aria-label="Main navigation">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo" aria-label="Tamil Bible App home">
+      <div class="nav-logo-icon" aria-hidden="true">✝</div>
+      <span class="nav-logo-text"><span>Tamil</span> Bible</span>
+    </a>
+    <ul class="nav-links" id="nav-menu" role="list">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#features">Features</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="index.html" class="btn-nav">← Back to Home</a>
+      <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <div class="page-404" style="background:var(--grad-hero);">
+    <!-- Background grid -->
+    <div class="hero-bg-grid" aria-hidden="true" style="position:absolute;inset:0;"></div>
+    <div class="blob blob-purple" style="width:400px;height:400px;top:-100px;left:-100px;" aria-hidden="true"></div>
+    <div class="blob blob-blue" style="width:300px;height:300px;bottom:-50px;right:-50px;" aria-hidden="true"></div>
+
+    <div style="position:relative;z-index:1;">
+      <div class="error-code" aria-label="Error 404">404</div>
+      <div style="font-size:4rem;margin:12px 0;" aria-hidden="true">🙏</div>
+      <h1 class="error-title">Page Not Found</h1>
+      <p class="error-desc">The page you are looking for doesn't exist or has been moved.</p>
+      <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+        <a href="index.html" class="btn btn-primary">🏠 Go Home</a>
+        <a href="contact.html" class="btn btn-outline">📧 Contact Support</a>
+      </div>
+      <p style="margin-top:32px;color:var(--text-muted);font-size:0.8125rem;">Tamil Bible App — com.rpr.tamil_bible_app</p>
+    </div>
+  </div>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+
+# Disallow admin-related paths
+Disallow: /admin/
+Disallow: /.env
+Disallow: /assets/icons/
+
+# Crawl delay
+Crawl-delay: 10
+
+# Sitemaps
+Sitemap: https://tamilbibleapp.com/sitemap.xml
