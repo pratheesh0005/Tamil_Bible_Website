@@ -116,47 +116,269 @@ document.querySelectorAll('.faq-question').forEach(btn => {
   });
 });
 
-/* ── Contact form ── */
-const contactForm = document.getElementById('contact-form');
-if (contactForm) {
-  contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const btn = contactForm.querySelector('.form-submit');
-    const original = btn.textContent;
-    btn.textContent = 'Sending…';
-    btn.disabled = true;
-    setTimeout(() => {
-      btn.textContent = '✓ Message Sent!';
-      btn.style.background = 'linear-gradient(135deg, #10b981, #059669)';
-      contactForm.reset();
-      setTimeout(() => {
-        btn.textContent = original;
-        btn.style.background = '';
-        btn.disabled = false;
-      }, 3500);
-    }, 1200);
+/* ============================================================
+   EmailJS Integration (No Mailto Links / Email Apps)
+   ============================================================ */
+
+const PUBLIC_KEY = "Ut7ujiC-7YQYrne6C";
+const SERVICE_ID = "service_wuhg9g2";
+const TEMPLATE_ID = "__ejs-test-mail-service__";
+
+// Initialize EmailJS SDK
+if (typeof emailjs !== 'undefined') {
+  try {
+    emailjs.init({ publicKey: PUBLIC_KEY });
+  } catch (err) {
+    console.error('EmailJS SDK init error:', err);
+  }
+}
+
+/**
+ * Sanitizes user text input to prevent XSS injection
+ */
+function sanitizeInput(str) {
+  if (typeof str !== 'string') return '';
+  return str
+    .trim()
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#x27;')
+    .replace(/\//g, '&#x2F;');
+}
+
+/**
+ * Validates Email syntax
+ */
+function isValidEmail(email) {
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailRegex.test(email);
+}
+
+/**
+ * Helper to display styled status alerts inside form containers
+ */
+function showFormAlert(alertEl, type, messageHtml) {
+  if (!alertEl) return;
+  alertEl.style.display = 'block';
+  if (type === 'success') {
+    alertEl.style.background = 'rgba(16, 185, 129, 0.15)';
+    alertEl.style.border = '1px solid rgba(16, 185, 129, 0.4)';
+    alertEl.style.color = '#6ee7b7';
+  } else {
+    alertEl.style.background = 'rgba(239, 68, 68, 0.15)';
+    alertEl.style.border = '1px solid rgba(239, 68, 68, 0.4)';
+    alertEl.style.color = '#fca5a5';
+  }
+  alertEl.innerHTML = messageHtml;
+}
+
+/**
+ * Resets custom select dropdown menus after form reset
+ */
+function resetCustomSelects(formEl) {
+  if (!formEl) return;
+  formEl.querySelectorAll('.custom-select-wrapper').forEach(wrapper => {
+    const select = wrapper.previousElementSibling;
+    if (select && select.options.length > 0) {
+      const firstOpt = select.options[0];
+      const span = wrapper.querySelector('.custom-select-trigger span');
+      if (span) span.textContent = firstOpt.text;
+      wrapper.querySelectorAll('.custom-select-item').forEach((item, i) => {
+        item.classList.toggle('selected', i === 0);
+      });
+    }
   });
 }
 
-/* ── Delete-account request form ── */
+/* ── Delete-Account Request Form (EmailJS) ── */
 const deleteForm = document.getElementById('delete-form');
 if (deleteForm) {
-  deleteForm.addEventListener('submit', (e) => {
+  let isSubmittingDelete = false;
+
+  deleteForm.addEventListener('submit', async (e) => {
     e.preventDefault();
-    const btn = deleteForm.querySelector('.form-submit');
-    const original = btn.textContent;
-    btn.textContent = 'Submitting…';
-    btn.disabled = true;
-    setTimeout(() => {
-      btn.textContent = '✓ Request Submitted';
-      btn.style.background = 'linear-gradient(135deg, #10b981, #059669)';
+    if (isSubmittingDelete) return;
+
+    const nameInput = document.getElementById('delete-name');
+    const emailInput = document.getElementById('delete-email');
+    const uidInput = document.getElementById('delete-uid');
+    const reasonInput = document.getElementById('delete-reason');
+    const messageInput = document.getElementById('delete-message');
+    const statusAlert = document.getElementById('delete-status-alert');
+
+    const fullName = nameInput ? nameInput.value.trim() : '';
+    const email = emailInput ? emailInput.value.trim() : '';
+    const firebaseUid = uidInput ? uidInput.value.trim() : '';
+    const reason = reasonInput ? reasonInput.value.trim() : '';
+    const additionalInfo = messageInput ? messageInput.value.trim() : '';
+
+    // Validation
+    if (!fullName || fullName.length < 2) {
+      showFormAlert(statusAlert, 'error', '⚠️ Please enter your registered Full Name.');
+      if (nameInput) nameInput.focus();
+      return;
+    }
+
+    if (!email || !isValidEmail(email)) {
+      showFormAlert(statusAlert, 'error', '⚠️ Please enter a valid registered Email address.');
+      if (emailInput) emailInput.focus();
+      return;
+    }
+
+    isSubmittingDelete = true;
+    const submitBtn = deleteForm.querySelector('.form-submit');
+    const originalBtnHtml = submitBtn ? submitBtn.innerHTML : '🗑️ Request Account Deletion';
+
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = '<span class="btn-spinner"></span> Submitting Request...';
+    }
+
+    const templateParams = {
+      full_name: sanitizeInput(fullName),
+      email: sanitizeInput(email),
+      firebase_uid: sanitizeInput(firebaseUid) || 'Not Provided',
+      reason: sanitizeInput(reason) || 'Not Specified',
+      additional_information: sanitizeInput(additionalInfo) || 'None',
+      request_date: new Date().toLocaleString(),
+      browser: navigator.userAgent,
+      platform: navigator.platform
+    };
+
+    try {
+      if (typeof emailjs !== 'undefined') {
+        await emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams);
+      } else {
+        throw new Error('EmailJS SDK is not loaded. Please check your internet connection.');
+      }
+
+      showFormAlert(
+        statusAlert,
+        'success',
+        '✅ <strong>Your account deletion request has been submitted successfully.</strong> We will review your request and contact you via your registered email address.'
+      );
+
       deleteForm.reset();
-      setTimeout(() => {
-        btn.textContent = original;
-        btn.style.background = '';
-        btn.disabled = false;
-      }, 4000);
-    }, 1200);
+      resetCustomSelects(deleteForm);
+
+    } catch (err) {
+      console.error('Account Deletion submit error:', err);
+      showFormAlert(
+        statusAlert,
+        'error',
+        '❌ <strong>Failed to submit request.</strong> Please check your connection and try again.'
+      );
+    } finally {
+      isSubmittingDelete = false;
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalBtnHtml;
+      }
+    }
+  });
+}
+
+/* ── Contact Form (EmailJS) ── */
+const contactForm = document.getElementById('contact-form');
+if (contactForm) {
+  let isSubmittingContact = false;
+
+  contactForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    if (isSubmittingContact) return;
+
+    const nameInput = document.getElementById('contact-name');
+    const emailInput = document.getElementById('contact-email');
+    const typeInput = document.getElementById('contact-type');
+    const subjectInput = document.getElementById('contact-subject');
+    const messageInput = document.getElementById('contact-message');
+    const deviceInput = document.getElementById('contact-device');
+    const statusAlert = document.getElementById('contact-status-alert');
+
+    const fullName = nameInput ? nameInput.value.trim() : '';
+    const email = emailInput ? emailInput.value.trim() : '';
+    const messageType = typeInput ? typeInput.value.trim() : '';
+    const subject = subjectInput ? subjectInput.value.trim() : '';
+    const message = messageInput ? messageInput.value.trim() : '';
+    const device = deviceInput ? deviceInput.value.trim() : '';
+
+    if (!fullName || fullName.length < 2) {
+      showFormAlert(statusAlert, 'error', '⚠️ Please enter your Full Name.');
+      if (nameInput) nameInput.focus();
+      return;
+    }
+
+    if (!email || !isValidEmail(email)) {
+      showFormAlert(statusAlert, 'error', '⚠️ Please enter a valid Email address.');
+      if (emailInput) emailInput.focus();
+      return;
+    }
+
+    if (!subject || subject.length < 2) {
+      showFormAlert(statusAlert, 'error', '⚠️ Please enter a Subject.');
+      if (subjectInput) subjectInput.focus();
+      return;
+    }
+
+    if (!message || message.length < 5) {
+      showFormAlert(statusAlert, 'error', '⚠️ Please enter your Message content.');
+      if (messageInput) messageInput.focus();
+      return;
+    }
+
+    isSubmittingContact = true;
+    const submitBtn = contactForm.querySelector('.form-submit');
+    const originalBtnHtml = submitBtn ? submitBtn.innerHTML : '✉️ Send Message';
+
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = '<span class="btn-spinner"></span> Sending Message...';
+    }
+
+    const templateParams = {
+      full_name: sanitizeInput(fullName),
+      email: sanitizeInput(email),
+      reason: sanitizeInput(messageType) || 'General Support',
+      subject: sanitizeInput(subject),
+      additional_information: sanitizeInput(message),
+      device: sanitizeInput(device) || 'N/A',
+      request_date: new Date().toLocaleString(),
+      browser: navigator.userAgent,
+      platform: navigator.platform
+    };
+
+    try {
+      if (typeof emailjs !== 'undefined') {
+        await emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams);
+      } else {
+        throw new Error('EmailJS SDK is not loaded. Please check your internet connection.');
+      }
+
+      showFormAlert(
+        statusAlert,
+        'success',
+        '✅ <strong>Your message has been submitted successfully.</strong> We will review your message and contact you via your email address.'
+      );
+
+      contactForm.reset();
+      resetCustomSelects(contactForm);
+
+    } catch (err) {
+      console.error('Contact submit error:', err);
+      showFormAlert(
+        statusAlert,
+        'error',
+        '❌ <strong>Failed to send message.</strong> Please check your connection and try again.'
+      );
+    } finally {
+      isSubmittingContact = false;
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalBtnHtml;
+      }
+    }
   });
 }
 
@@ -182,20 +404,69 @@ document.querySelectorAll('.legal-toc ol li').forEach(li => {
   });
 });
 
-/* ── Lazy load images ── */
-if ('loading' in HTMLImageElement.prototype) {
-  document.querySelectorAll('img[loading="lazy"]').forEach(img => {
-    if (img.dataset.src) img.src = img.dataset.src;
-  });
-} else {
-  const lazyObserver = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const img = entry.target;
-        if (img.dataset.src) img.src = img.dataset.src;
-        lazyObserver.unobserve(img);
-      }
+/* ── Custom Select Enhancer (100% Dark Dropdown Popup) ── */
+function initCustomSelects() {
+  document.querySelectorAll('.form-group select').forEach(select => {
+    if (select.dataset.customized === 'true') return;
+    select.dataset.customized = 'true';
+
+    // Hide native select visually
+    select.style.display = 'none';
+
+    const wrapper = document.createElement('div');
+    wrapper.className = 'custom-select-wrapper';
+
+    const trigger = document.createElement('button');
+    trigger.type = 'button';
+    trigger.className = 'custom-select-trigger';
+    const selectedOption = select.options[select.selectedIndex] || select.options[0];
+    trigger.innerHTML = `<span>${selectedOption ? selectedOption.text : 'Select...'}</span><svg class="custom-select-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>`;
+
+    const menu = document.createElement('div');
+    menu.className = 'custom-select-menu';
+
+    Array.from(select.options).forEach((opt, idx) => {
+      const item = document.createElement('div');
+      item.className = 'custom-select-item' + (idx === select.selectedIndex ? ' selected' : '');
+      item.textContent = opt.text;
+      item.dataset.value = opt.value;
+
+      item.addEventListener('click', (e) => {
+        e.stopPropagation();
+        select.value = opt.value;
+        select.dispatchEvent(new Event('change', { bubbles: true }));
+
+        trigger.querySelector('span').textContent = opt.text;
+        menu.querySelectorAll('.custom-select-item').forEach(el => el.classList.remove('selected'));
+        item.classList.add('selected');
+        wrapper.classList.remove('open');
+      });
+
+      menu.appendChild(item);
     });
+
+    trigger.addEventListener('click', (e) => {
+      e.stopPropagation();
+      document.querySelectorAll('.custom-select-wrapper.open').forEach(w => {
+        if (w !== wrapper) w.classList.remove('open');
+      });
+      wrapper.classList.toggle('open');
+    });
+
+    wrapper.appendChild(trigger);
+    wrapper.appendChild(menu);
+
+    select.parentNode.insertBefore(wrapper, select.nextSibling);
   });
-  document.querySelectorAll('img[data-src]').forEach(img => lazyObserver.observe(img));
+
+  document.addEventListener('click', () => {
+    document.querySelectorAll('.custom-select-wrapper.open').forEach(w => w.classList.remove('open'));
+  });
 }
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initCustomSelects);
+} else {
+  initCustomSelects();
+}
+

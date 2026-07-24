@@ -1,30 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tamil Bible App — Read, Listen & Worship in Tamil</title>
-  <meta name="description" content="Tamil Bible App — A premium Android Bible app. Read all 66 books, listen to Audio Bible, write Notes, set Prayer Reminders, explore Christian Songs, and share prayer requests. Free to download."/>
-  <meta name="keywords" content="Tamil Bible, Tamil Bible App, தமிழ் பைபிள், Bible App Android, Christian Tamil App, Audio Bible Tamil, Prayer Reminder"/>
-  <meta name="author" content="RPR Development"/>
-  <meta name="theme-color" content="#8b5cf6"/>
-  <link rel="canonical" href="https://tamilbibleapp.com/index.html"/>
+  <meta name="description"
+    content="Tamil Bible App — A premium Android Bible app. Read all 66 books, listen to Audio Bible, write Notes, set Prayer Reminders, explore Christian Songs, and share prayer requests. Free to download." />
+  <meta name="keywords"
+    content="Tamil Bible, Tamil Bible App, தமிழ் பைபிள், Bible App Android, Christian Tamil App, Audio Bible Tamil, Prayer Reminder" />
+  <meta name="author" content="RPR Development" />
+  <meta name="theme-color" content="#8b5cf6" />
+  <link rel="canonical" href="https://tamilbibleapp.com/index.html" />
 
   <!-- Open Graph -->
-  <meta property="og:type" content="website"/>
-  <meta property="og:url" content="https://tamilbibleapp.com/"/>
-  <meta property="og:title" content="Tamil Bible App — Read, Listen & Worship in Tamil"/>
-  <meta property="og:description" content="A premium Android Bible app with 66 books, Audio Bible, Notes, Prayer Reminders, Christian Songs, and more. Free on Google Play."/>
-  <meta property="og:image" content="https://tamilbibleapp.com/assets/og-image.jpg"/>
-  <meta property="og:site_name" content="Tamil Bible App"/>
-  <meta property="og:locale" content="en_US"/>
-  <meta property="og:locale:alternate" content="ta_IN"/>
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://tamilbibleapp.com/" />
+  <meta property="og:title" content="Tamil Bible App — Read, Listen & Worship in Tamil" />
+  <meta property="og:description"
+    content="A premium Android Bible app with 66 books, Audio Bible, Notes, Prayer Reminders, Christian Songs, and more. Free on Google Play." />
+  <meta property="og:image" content="https://tamilbibleapp.com/assets/og-image.jpg" />
+  <meta property="og:site_name" content="Tamil Bible App" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:locale:alternate" content="ta_IN" />
 
   <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image"/>
-  <meta name="twitter:title" content="Tamil Bible App — Read, Listen & Worship in Tamil"/>
-  <meta name="twitter:description" content="Premium Tamil Bible App with Audio Bible, Notes, Prayer Reminders and more. Free on Google Play."/>
-  <meta name="twitter:image" content="https://tamilbibleapp.com/assets/og-image.jpg"/>
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Tamil Bible App — Read, Listen & Worship in Tamil" />
+  <meta name="twitter:description"
+    content="Premium Tamil Bible App with Audio Bible, Notes, Prayer Reminders and more. Free on Google Play." />
+  <meta name="twitter:image" content="https://tamilbibleapp.com/assets/og-image.jpg" />
 
   <!-- Schema.org -->
   <script type="application/ld+json">
@@ -42,547 +47,680 @@
   </script>
 
   <!-- Favicon & Manifest -->
-  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg"/>
-  <link rel="apple-touch-icon" href="assets/apple-icon.png"/>
-  <link rel="manifest" href="manifest.json"/>
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <link rel="apple-touch-icon" href="assets/apple-icon.png" />
+  <link rel="manifest" href="manifest.json" />
 
-  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
 
-<!-- ── Loading Screen ── -->
-<div id="loading-screen" role="status" aria-label="Loading">
-  <div class="loader-cross" aria-hidden="true"></div>
-  <p class="loader-text">Tamil Bible App</p>
-</div>
-
-<!-- ── Scroll to Top ── -->
-<button id="scroll-top" aria-label="Scroll to top">
-  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4l8 8h-6v8h-4v-8H4z"/></svg>
-</button>
-
-<!-- ══════════════════ NAVBAR ══════════════════ -->
-<nav class="navbar" role="navigation" aria-label="Main navigation">
-  <div class="nav-container">
-    <a href="index.html" class="nav-logo" aria-label="Tamil Bible App home">
-      <div class="nav-logo-icon" aria-hidden="true">✝</div>
-      <span class="nav-logo-text"><span>Tamil</span> Bible</span>
-    </a>
-    <ul class="nav-links" id="nav-menu" role="list">
-      <li><a href="index.html#features">Features</a></li>
-      <li><a href="index.html#why">Why Us</a></li>
-      <li><a href="index.html#faq">FAQ</a></li>
-      <li><a href="contact.html">Contact</a></li>
-      <li><a href="privacy.html">Privacy</a></li>
-    </ul>
-    <div class="nav-cta">
-      <a href="#download" class="btn-nav">⬇ Download</a>
-      <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
+  <!-- ── Loading Screen ── -->
+  <div id="loading-screen" role="status" aria-label="Loading">
+    <img src="assets/app_icon.png" alt="Tamil Bible App" class="loader-logo" />
+    <p class="loader-text">Tamil Bible App</p>
   </div>
-</nav>
 
-<!-- ══════════════════ HERO ══════════════════ -->
-<section class="hero" id="home" aria-labelledby="hero-title">
-  <div class="hero-bg-grid" aria-hidden="true"></div>
-  <!-- Blobs -->
-  <div class="blob blob-purple" style="width:500px;height:500px;top:-100px;left:-150px;" aria-hidden="true"></div>
-  <div class="blob blob-blue" style="width:400px;height:400px;bottom:-50px;right:-100px;" aria-hidden="true"></div>
-  <div class="blob blob-cyan" style="width:300px;height:300px;top:40%;left:50%;transform:translate(-50%,-50%);" aria-hidden="true"></div>
+  <!-- ── Scroll to Top ── -->
+  <button id="scroll-top" aria-label="Scroll to top">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M12 4l8 8h-6v8h-4v-8H4z" />
+    </svg>
+  </button>
 
-  <div class="hero-content">
-    <div class="hero-badge">
-      <span class="dot" aria-hidden="true"></span>
-      Free on Google Play — com.rpr.tamil_bible_app
-    </div>
-
-    <h1 class="hero-title" id="hero-title">
-      <span class="line1">Read the Word</span>
-      <span class="line2">in <span class="tamil">தமிழ்</span></span>
-    </h1>
-
-    <p class="hero-desc">
-      A premium Bible app designed for Tamil-speaking Christians. Read all 66 books, listen to the Audio Bible, write personal notes, pray together, and grow in faith — all in one place.
-    </p>
-
-    <div class="hero-actions">
-      <a href="https://play.google.com/store/apps/details?id=com.rpr.tamil_bible_app"
-         class="play-store-btn" target="_blank" rel="noopener noreferrer" aria-label="Download on Google Play">
-        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-          <path d="M3 20.5v-17l17.5 8.5L3 20.5z" fill="#EA4335"/>
-          <path d="M3 3.5l9.9 9.9-9.9 7.1V3.5z" fill="#FBBC04"/>
-          <path d="M3 20.5l9.9-9.9 3.6 3.6L3 20.5z" fill="#34A853"/>
-          <path d="M3 3.5l13.5 6.9-3.6 3.6L3 3.5z" fill="#4285F4"/>
-        </svg>
-        <span class="play-store-btn-text">
-          <small>GET IT ON</small>
-          Google Play
-        </span>
+  <!-- ══════════════════ NAVBAR ══════════════════ -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo" aria-label="Tamil Bible App home">
+        <div class="nav-logo-icon" aria-hidden="true">
+          <img src="assets/app_icon.png" alt="Tamil Bible Logo" />
+        </div>
+        <span class="nav-logo-text"><span>Tamil</span> Bible</span>
       </a>
-      <a href="#features" class="btn btn-outline">Explore Features ↓</a>
-    </div>
-
-    <!-- Stats bar -->
-    <div class="hero-stats" aria-label="App statistics">
-      <div class="hero-stat">
-        <div class="hero-stat-num" data-count="66" data-suffix="+" aria-label="66+ Bible Books">66+</div>
-        <div class="hero-stat-label">Bible Books</div>
-      </div>
-      <div class="hero-stat">
-        <div class="hero-stat-num" data-count="31000" data-suffix="+" aria-label="31000+ Verses">31,000+</div>
-        <div class="hero-stat-label">Verses</div>
-      </div>
-      <div class="hero-stat">
-        <div class="hero-stat-num" data-count="2" aria-label="2 Languages">2</div>
-        <div class="hero-stat-label">Languages</div>
-      </div>
-      <div class="hero-stat">
-        <div class="hero-stat-num" aria-label="Free">Free</div>
-        <div class="hero-stat-label">Forever</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ══════════════════ FEATURES ══════════════════ -->
-<section class="section" id="features" aria-labelledby="features-title">
-  <div class="container">
-    <div class="section-center">
-      <div class="section-tag" aria-hidden="true">✦ Everything You Need</div>
-      <h2 class="section-title" id="features-title">Packed with <span class="grad">Powerful Features</span></h2>
-      <p class="section-subtitle">Every feature is built specifically for Tamil Christians to read, grow, and connect in their faith journey.</p>
-    </div>
-
-    <div class="features-grid">
-
-      <!-- Bible Reading -->
-      <article class="feature-card reveal delay-1" aria-label="Full Tamil Bible">
-        <div class="feature-icon" style="background:linear-gradient(135deg,rgba(59,130,246,.15),rgba(139,92,246,.15));border:1px solid rgba(59,130,246,.25);">📖</div>
-        <h3 class="feature-title">Full Tamil Bible</h3>
-        <p class="feature-desc">Complete Old and New Testament — all 66 books in Tamil with verse-by-verse reading, chapter navigation, and book picker.</p>
-      </article>
-
-      <!-- Audio Bible -->
-      <article class="feature-card reveal delay-2" aria-label="Audio Bible">
-        <div class="feature-icon" style="background:linear-gradient(135deg,rgba(16,185,129,.15),rgba(59,130,246,.15));border:1px solid rgba(16,185,129,.25);">🎧</div>
-        <h3 class="feature-title">Audio Bible</h3>
-        <p class="feature-desc">Listen to the Bible being read aloud. Control playback speed, enable auto-scroll, and follow along with the text simultaneously.</p>
-      </article>
-
-      <!-- Voice Search -->
-      <article class="feature-card reveal delay-3" aria-label="Voice Search">
-        <div class="feature-icon" style="background:linear-gradient(135deg,rgba(236,72,153,.15),rgba(139,92,246,.15));border:1px solid rgba(236,72,153,.25);">🎙️</div>
-        <h3 class="feature-title">Voice Search</h3>
-        <p class="feature-desc">Search the entire Bible hands-free using voice input. Find verses by speaking keywords or phrases in Tamil or English.</p>
-      </article>
-
-      <!-- Notes System -->
-      <article class="feature-card reveal delay-1" aria-label="Notes System">
-        <div class="feature-icon" style="background:linear-gradient(135deg,rgba(251,191,36,.15),rgba(249,115,22,.15));border:1px solid rgba(251,191,36,.25);">📝</div>
-        <h3 class="feature-title">Text &amp; Audio Notes</h3>
-        <p class="feature-desc">Write rich text notes with the built-in editor, or record voice memos as audio notes. Export to PDF or DOCX. Synced securely to the cloud.</p>
-      </article>
-
-      <!-- Prayer Requests -->
-      <article class="feature-card reveal delay-2" aria-label="Prayer Requests">
-        <div class="feature-icon" style="background:linear-gradient(135deg,rgba(139,92,246,.15),rgba(236,72,153,.15));border:1px solid rgba(139,92,246,.25);">🙏</div>
-        <h3 class="feature-title">Prayer Requests</h3>
-        <p class="feature-desc">Share prayer requests with fellow believers and intercede for others. Submit requests, pray for others, like, and respond in a spirit of love and fellowship.</p>
-      </article>
-
-      <!-- Prayer Reminders -->
-      <article class="feature-card reveal delay-3" aria-label="Prayer Reminders">
-        <div class="feature-icon" style="background:linear-gradient(135deg,rgba(16,185,129,.15),rgba(251,191,36,.15));border:1px solid rgba(16,185,129,.25);">⏰</div>
-        <h3 class="feature-title">Prayer Reminders</h3>
-        <p class="feature-desc">Set daily prayer reminders for prayer time, Bible reading, church attendance, and custom schedules with alarm sounds.</p>
-      </article>
-
-      <!-- Christian Songs -->
-      <article class="feature-card reveal delay-1" aria-label="Christian Songs">
-        <div class="feature-icon" style="background:linear-gradient(135deg,rgba(249,115,22,.15),rgba(239,68,68,.15));border:1px solid rgba(249,115,22,.25);">🎵</div>
-        <h3 class="feature-title">Christian Songs</h3>
-        <p class="feature-desc">Browse a curated library of Tamil Christian songs and convention songs. Copy lyrics, share, and export. Organized by category.</p>
-      </article>
-
-      <!-- Bible Dictionary -->
-      <article class="feature-card reveal delay-2" aria-label="Bible Dictionary">
-        <div class="feature-icon" style="background:linear-gradient(135deg,rgba(59,130,246,.15),rgba(16,185,129,.15));border:1px solid rgba(59,130,246,.25);">📚</div>
-        <h3 class="feature-title">Bible Dictionary</h3>
-        <p class="feature-desc">Deep-dive into biblical words with Tamil explanations, English verse cross-references, Old and New Testament occurrences, and related words.</p>
-      </article>
-
-      <!-- Verse Highlights & Bookmarks -->
-      <article class="feature-card reveal delay-3" aria-label="Verse Highlights and Bookmarks">
-        <div class="feature-icon" style="background:linear-gradient(135deg,rgba(251,191,36,.15),rgba(139,92,246,.15));border:1px solid rgba(251,191,36,.25);">🔖</div>
-        <h3 class="feature-title">Highlights &amp; Bookmarks</h3>
-        <p class="feature-desc">Highlight favourite verses in colour and bookmark chapters for quick access. All saved securely in your personal cloud library.</p>
-      </article>
-
-      <!-- Bible Quotes -->
-      <article class="feature-card reveal delay-1" aria-label="Bible Quote Editor">
-        <div class="feature-icon" style="background:linear-gradient(135deg,rgba(139,92,246,.15),rgba(59,130,246,.15));border:1px solid rgba(139,92,246,.25);">🖼️</div>
-        <h3 class="feature-title">Bible Quote Cards</h3>
-        <p class="feature-desc">Create stunning Bible verse quote images with custom fonts, backgrounds, and themes. Share directly to WhatsApp, Telegram, or social media.</p>
-      </article>
-
-      <!-- Daily Verse -->
-      <article class="feature-card reveal delay-2" aria-label="Daily Verse">
-        <div class="feature-icon" style="background:linear-gradient(135deg,rgba(16,185,129,.15),rgba(0,212,255,.15));border:1px solid rgba(16,185,129,.25);">🌅</div>
-        <h3 class="feature-title">Daily Verse</h3>
-        <p class="feature-desc">Start every day with an admin-curated daily Bible verse displayed beautifully on your home screen. Refreshed daily by the ministry team.</p>
-      </article>
-
-      <!-- Dual Language -->
-      <article class="feature-card reveal delay-3" aria-label="Tamil and English Support">
-        <div class="feature-icon" style="background:linear-gradient(135deg,rgba(236,72,153,.15),rgba(249,115,22,.15));border:1px solid rgba(236,72,153,.25);">🌐</div>
-        <h3 class="feature-title">Tamil &amp; English</h3>
-        <p class="feature-desc">Full Tamil language support with an English language option. Switch between languages instantly from the profile settings.</p>
-      </article>
-
-      <!-- Updates & Announcements -->
-      <article class="feature-card reveal delay-1" aria-label="Updates and Announcements">
-        <div class="feature-icon" style="background:linear-gradient(135deg,rgba(0,212,255,.15),rgba(59,130,246,.15));border:1px solid rgba(0,212,255,.25);">📢</div>
-        <h3 class="feature-title">Updates &amp; Announcements</h3>
-        <p class="feature-desc">Receive ministry announcements, pinned updates, video and image content from your church or ministry admin directly in the app.</p>
-      </article>
-
-      <!-- Push Notifications -->
-      <article class="feature-card reveal delay-2" aria-label="Push Notifications">
-        <div class="feature-icon" style="background:linear-gradient(135deg,rgba(139,92,246,.15),rgba(16,185,129,.15));border:1px solid rgba(139,92,246,.25);">🔔</div>
-        <h3 class="feature-title">Push Notifications</h3>
-        <p class="feature-desc">Stay connected with real-time push notifications via OneSignal for prayer requests, announcements, and ministry updates.</p>
-      </article>
-
-      <!-- Feedback System -->
-      <article class="feature-card reveal delay-3" aria-label="Feedback System">
-        <div class="feature-icon" style="background:linear-gradient(135deg,rgba(251,191,36,.15),rgba(239,68,68,.15));border:1px solid rgba(251,191,36,.25);">💬</div>
-        <h3 class="feature-title">Feedback &amp; Support</h3>
-        <p class="feature-desc">Submit bug reports, suggestions, corrections, and feature requests directly within the app. Our team reviews every submission.</p>
-      </article>
-
-      <!-- Secure Cloud Account -->
-      <article class="feature-card reveal delay-1" aria-label="Secure Cloud Account">
-        <div class="feature-icon" style="background:linear-gradient(135deg,rgba(16,185,129,.15),rgba(139,92,246,.15));border:1px solid rgba(16,185,129,.25);">🔐</div>
-        <h3 class="feature-title">Secure Cloud Account</h3>
-        <p class="feature-desc">Sign in with Email or Google. All your notes, bookmarks, highlights, and preferences sync across devices securely via Firebase.</p>
-      </article>
-
-    </div>
-  </div>
-</section>
-
-<!-- ══════════════════ WHY CHOOSE US ══════════════════ -->
-<section class="section" id="why" style="background:linear-gradient(180deg,rgba(139,92,246,.04) 0%,transparent 100%);" aria-labelledby="why-title">
-  <div class="container">
-    <div class="why-grid">
-      <div class="reveal-left">
-        <div class="section-tag" aria-hidden="true">✦ Why Tamil Bible App</div>
-        <h2 class="section-title" id="why-title">Built for <span class="grad">Tamil Christians</span></h2>
-        <p class="section-subtitle" style="margin-bottom:36px;">Every detail is designed with our community in mind — from the language to the features to the design.</p>
-
-        <div class="why-item">
-          <div class="why-icon" aria-hidden="true">📖</div>
-          <div class="why-content">
-            <h3>Complete Tamil Bible Offline</h3>
-            <p>All 66 books — Old and New Testament — bundled within the app for offline reading without internet dependency.</p>
-          </div>
-        </div>
-        <div class="why-item">
-          <div class="why-icon" aria-hidden="true">⚡</div>
-          <div class="why-content">
-            <h3>Instant Navigation</h3>
-            <p>Jump directly to any book, chapter, or verse instantly. Remembers your last reading position automatically.</p>
-          </div>
-        </div>
-        <div class="why-item">
-          <div class="why-icon" aria-hidden="true">🔒</div>
-          <div class="why-content">
-            <h3>Privacy-First</h3>
-            <p>Your data is stored securely in Firebase Firestore. Your notes, prayers, and profile are fully private by default.</p>
-          </div>
-        </div>
-        <div class="why-item">
-          <div class="why-icon" aria-hidden="true">🌟</div>
-          <div class="why-content">
-            <h3>Admin-Curated Content</h3>
-            <p>Daily verses, announcements, and ministry updates are managed by a dedicated admin team to keep content fresh and relevant.</p>
-          </div>
-        </div>
-        <div class="why-item">
-          <div class="why-icon" aria-hidden="true">💯</div>
-          <div class="why-content">
-            <h3>Completely Free</h3>
-            <p>No ads, no subscriptions, no locked features. The full Tamil Bible experience is free for every believer.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="reveal-right" style="display:flex;align-items:center;justify-content:center;">
-        <div class="phone-mockup" role="img" aria-label="Tamil Bible App phone preview">
-          <div class="phone-notch" aria-hidden="true"></div>
-          <div class="phone-screen">
-            <div class="phone-screen-cross" aria-hidden="true">✝</div>
-            <div style="font-size:1rem;font-weight:700;margin-bottom:4px;">Tamil Bible</div>
-            <div style="font-size:0.75rem;color:#64748b;margin-bottom:20px;font-family:'Noto Serif Tamil',serif;">தமிழ் பைபிள்</div>
-            <div style="background:rgba(139,92,246,.1);border:1px solid rgba(139,92,246,.2);border-radius:12px;padding:12px 16px;width:100%;text-align:left;margin-bottom:8px;">
-              <div style="font-size:0.65rem;color:#8b5cf6;font-weight:600;margin-bottom:4px;">ஆதியாகமம் 1:1</div>
-              <div style="font-size:0.7rem;color:#e2e8f0;line-height:1.5;">ஆதியிலே தேவன் வானத்தையும் பூமியையும் சிருஷ்டித்தார்.</div>
-            </div>
-            <div style="display:flex;gap:8px;margin-top:12px;">
-              <div style="flex:1;height:32px;background:rgba(59,130,246,.15);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:0.65rem;color:#3b82f6;">📖 Read</div>
-              <div style="flex:1;height:32px;background:rgba(16,185,129,.15);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:0.65rem;color:#10b981;">🎧 Audio</div>
-              <div style="flex:1;height:32px;background:rgba(251,191,36,.15);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:0.65rem;color:#fbbf24;">🔖 Save</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ══════════════════ STATS ══════════════════ -->
-<section class="section" aria-labelledby="stats-title">
-  <div class="container">
-    <div class="section-center">
-      <div class="section-tag" aria-hidden="true">✦ By The Numbers</div>
-      <h2 class="section-title" id="stats-title">The <span class="grad">Scripture</span> in Numbers</h2>
-    </div>
-    <div class="stats-grid">
-      <div class="stat-card reveal delay-1">
-        <span class="stat-num" data-count="66" data-suffix="+">0+</span>
-        <span class="stat-label">Bible Books</span>
-      </div>
-      <div class="stat-card reveal delay-2">
-        <span class="stat-num" data-count="1189" data-suffix="+">0+</span>
-        <span class="stat-label">Chapters</span>
-      </div>
-      <div class="stat-card reveal delay-3">
-        <span class="stat-num" data-count="31102" data-suffix="+">0+</span>
-        <span class="stat-label">Verses</span>
-      </div>
-      <div class="stat-card reveal delay-4">
-        <span class="stat-num" data-count="16">0</span>
-        <span class="stat-label">App Features</span>
-      </div>
-      <div class="stat-card reveal delay-5">
-        <span class="stat-num" data-count="2">0</span>
-        <span class="stat-label">Languages</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ══════════════════ TESTIMONIALS ══════════════════ -->
-<section class="section" style="background:linear-gradient(180deg,rgba(59,130,246,.04) 0%,transparent 100%);" aria-labelledby="testimonials-title">
-  <div class="container">
-    <div class="section-center">
-      <div class="section-tag" aria-hidden="true">✦ Testimonials</div>
-      <h2 class="section-title" id="testimonials-title">What <span class="grad">Believers Say</span></h2>
-      <p class="section-subtitle">Real feedback from our Tamil Christian community.</p>
-    </div>
-    <div class="testimonials-grid">
-      <div class="testimonial-card reveal delay-1">
-        <div class="testimonial-stars" aria-label="5 stars">★★★★★</div>
-        <p class="testimonial-text">"இந்த ஆப் மிகவும் பயனுள்ளதாக உள்ளது. தினமும் வேத வசனம் படிக்க மிகவும் உதவுகிறது. Audio Bible feature அருமை!"</p>
-        <div class="testimonial-author">
-          <div class="testimonial-avatar" aria-hidden="true">ம</div>
-          <div>
-            <div class="testimonial-name">மரியம்மாள்</div>
-            <div class="testimonial-role">Daily Bible Reader</div>
-          </div>
-        </div>
-      </div>
-      <div class="testimonial-card reveal delay-2">
-        <div class="testimonial-stars" aria-label="5 stars">★★★★★</div>
-        <p class="testimonial-text">"The Prayer Request feature has changed my prayer life. I can pray for my church community directly through the app. Truly blessed!"</p>
-        <div class="testimonial-author">
-          <div class="testimonial-avatar" aria-hidden="true">P</div>
-          <div>
-            <div class="testimonial-name">Pastor Samuel</div>
-            <div class="testimonial-role">Church Pastor, Chennai</div>
-          </div>
-        </div>
-      </div>
-      <div class="testimonial-card reveal delay-3">
-        <div class="testimonial-stars" aria-label="5 stars">★★★★★</div>
-        <p class="testimonial-text">"Notes and Audio Notes feature is incredible. I record my sermon notes while listening to the preacher and they are always saved. Excellent app!"</p>
-        <div class="testimonial-author">
-          <div class="testimonial-avatar" aria-hidden="true">R</div>
-          <div>
-            <div class="testimonial-name">Rebecca Joshi</div>
-            <div class="testimonial-role">Youth Leader</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ══════════════════ FAQ ══════════════════ -->
-<section class="section" id="faq" aria-labelledby="faq-title">
-  <div class="container">
-    <div class="section-center">
-      <div class="section-tag" aria-hidden="true">✦ Questions</div>
-      <h2 class="section-title" id="faq-title">Frequently <span class="grad">Asked Questions</span></h2>
-    </div>
-    <div class="faq-list" role="list">
-
-      <div class="faq-item" role="listitem">
-        <button class="faq-question" aria-expanded="false">
-          Is Tamil Bible App free to use?
-          <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+      <ul class="nav-links" id="nav-menu" role="list">
+        <li><a href="index.html#features">Features</a></li>
+        <li><a href="index.html#screenshots">Screenshots</a></li>
+        <li><a href="index.html#why">Why Us</a></li>
+        <li><a href="index.html#faq">FAQ</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="privacy.html">Privacy</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="#download" class="btn-nav">⬇ Download</a>
+        <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-menu"
+          aria-label="Toggle navigation">
+          <span></span><span></span><span></span>
         </button>
-        <div class="faq-answer">
-          <div class="faq-answer-inner">Yes, Tamil Bible App is completely free to download and use. There are no hidden fees, subscriptions, or locked features. All 66 Bible books, Audio Bible, Notes, Prayer Requests, Songs, and every other feature is available for free.</div>
-        </div>
       </div>
-
-      <div class="faq-item" role="listitem">
-        <button class="faq-question" aria-expanded="false">
-          Do I need an account to use the app?
-          <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
-        </button>
-        <div class="faq-answer">
-          <div class="faq-answer-inner">You can browse the Bible without an account. However, to save Notes, Bookmarks, Highlights, Prayer Requests, and sync your progress across devices, you will need to sign in using your Email or Google account.</div>
-        </div>
-      </div>
-
-      <div class="faq-item" role="listitem">
-        <button class="faq-question" aria-expanded="false">
-          Can I read the Bible offline?
-          <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
-        </button>
-        <div class="faq-answer">
-          <div class="faq-answer-inner">Yes! The entire Tamil Bible text (all 66 books) is bundled within the app for offline reading. You do not need an internet connection to read the Bible. Some features like Prayer Requests, Updates, and syncing Notes require internet access.</div>
-        </div>
-      </div>
-
-      <div class="faq-item" role="listitem">
-        <button class="faq-question" aria-expanded="false">
-          Is my data private and secure?
-          <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
-        </button>
-        <div class="faq-answer">
-          <div class="faq-answer-inner">Absolutely. Your personal data (notes, bookmarks, highlights, prayer requests) is stored securely in Firebase Firestore with role-based security rules. We never sell your data to third parties. Profile images are hosted on Cloudinary with secure URLs. Read our <a href="privacy.html">Privacy Policy</a> for full details.</div>
-        </div>
-      </div>
-
-      <div class="faq-item" role="listitem">
-        <button class="faq-question" aria-expanded="false">
-          What languages does the app support?
-          <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
-        </button>
-        <div class="faq-answer">
-          <div class="faq-answer-inner">Tamil Bible App supports Tamil (தமிழ்) and English. You can switch the interface language at any time from your Profile settings. The Bible content is available in Tamil throughout, with English cross-references in the Bible Dictionary.</div>
-        </div>
-      </div>
-
-      <div class="faq-item" role="listitem">
-        <button class="faq-question" aria-expanded="false">
-          How do I delete my account?
-          <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
-        </button>
-        <div class="faq-answer">
-          <div class="faq-answer-inner">You can request account deletion by visiting our <a href="delete-account.html">Account Deletion page</a> or contacting support at <a href="mailto:rprpradeesh@gmail.com">rprpradeesh@gmail.com</a>. Upon verification, all your personal data including notes, bookmarks, highlights, prayer requests, and Firebase Authentication credentials will be permanently deleted within 30 days.</div>
-        </div>
-      </div>
-
-      <div class="faq-item" role="listitem">
-        <button class="faq-question" aria-expanded="false">
-          How do I become an admin or moderator?
-          <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
-        </button>
-        <div class="faq-answer">
-          <div class="faq-answer-inner">Admin and Super Admin roles are assigned exclusively by the ministry team via the Admin App. User roles are managed securely in Firestore and cannot be self-assigned. Contact us if your ministry would like to partner with us.</div>
-        </div>
-      </div>
-
     </div>
-  </div>
-</section>
+  </nav>
 
-<!-- ══════════════════ DOWNLOAD ══════════════════ -->
-<section class="download-section" id="download" aria-labelledby="download-title">
-  <div class="blob blob-purple" style="width:400px;height:400px;top:-100px;left:-100px;" aria-hidden="true"></div>
-  <div class="blob blob-blue" style="width:350px;height:350px;bottom:-80px;right:-80px;" aria-hidden="true"></div>
-  <div class="container" style="position:relative;z-index:1;">
-    <div class="section-tag" style="margin:0 auto 16px;" aria-hidden="true">✦ Get the App</div>
-    <h2 class="section-title reveal" id="download-title">Download <span class="grad">Tamil Bible App</span></h2>
-    <p class="section-subtitle reveal" style="margin:0 auto 8px;">Free for Android. Start reading God's Word in Tamil today.</p>
-    <p class="reveal" style="color:var(--text-muted);font-size:0.8125rem;margin-bottom:32px;">Package: com.rpr.tamil_bible_app</p>
-    <div class="download-actions reveal">
-      <a href="https://play.google.com/store/apps/details?id=com.rpr.tamil_bible_app"
-         class="play-store-btn" target="_blank" rel="noopener noreferrer" aria-label="Download Tamil Bible App on Google Play">
-        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-          <path d="M3 20.5v-17l17.5 8.5L3 20.5z" fill="#EA4335"/>
-          <path d="M3 3.5l9.9 9.9-9.9 7.1V3.5z" fill="#FBBC04"/>
-          <path d="M3 20.5l9.9-9.9 3.6 3.6L3 20.5z" fill="#34A853"/>
-          <path d="M3 3.5l13.5 6.9-3.6 3.6L3 3.5z" fill="#4285F4"/>
-        </svg>
-        <span class="play-store-btn-text">
-          <small>GET IT ON</small>
-          Google Play
-        </span>
-      </a>
-      <a href="contact.html" class="btn btn-outline">📧 Contact Us</a>
-    </div>
-  </div>
-</section>
+  <!-- ══════════════════ HERO ══════════════════ -->
+  <section class="hero" id="home" aria-labelledby="hero-title">
+    <div class="hero-bg-grid" aria-hidden="true"></div>
+    <!-- Blobs -->
+    <div class="blob blob-purple" style="width:500px;height:500px;top:-100px;left:-150px;" aria-hidden="true"></div>
+    <div class="blob blob-blue" style="width:400px;height:400px;bottom:-50px;right:-100px;" aria-hidden="true"></div>
+    <div class="blob blob-cyan" style="width:300px;height:300px;top:40%;left:50%;transform:translate(-50%,-50%);"
+      aria-hidden="true"></div>
 
-<!-- ══════════════════ FOOTER ══════════════════ -->
-<footer>
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <a href="index.html" class="nav-logo" style="display:inline-flex;margin-bottom:0;">
-          <div class="nav-logo-icon" aria-hidden="true">✝</div>
-          <span class="nav-logo-text"><span>Tamil</span> Bible</span>
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="dot" aria-hidden="true"></span>
+        Free on Google Play — com.rpr.tamil_bible_app
+      </div>
+
+      <h1 class="hero-title" id="hero-title">
+        <span class="line1">Read the God's Words</span>
+        <span class="line2">in <span class="tamil">தமிழ்</span></span>
+      </h1>
+
+      <p class="hero-desc">
+        A premium Bible app designed for Tamil-speaking Christians. Read all 66 books, listen to the Audio Bible, write
+        personal notes, pray together, and grow in faith — all in one place.
+      </p>
+
+      <div class="hero-actions">
+        <a href="https://play.google.com/store/apps/details?id=com.rpr.tamil_bible_app" class="play-store-btn"
+          target="_blank" rel="noopener noreferrer" aria-label="Download on Google Play">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M3 20.5v-17l17.5 8.5L3 20.5z" fill="#EA4335" />
+            <path d="M3 3.5l9.9 9.9-9.9 7.1V3.5z" fill="#FBBC04" />
+            <path d="M3 20.5l9.9-9.9 3.6 3.6L3 20.5z" fill="#34A853" />
+            <path d="M3 3.5l13.5 6.9-3.6 3.6L3 3.5z" fill="#4285F4" />
+          </svg>
+          <span class="play-store-btn-text">
+            <small>GET IT ON</small>
+            Google Play
+          </span>
         </a>
-        <p>A premium Tamil Bible application built for the Tamil Christian community. Read, listen, worship, and grow in faith.</p>
-        <div class="footer-social" role="list" aria-label="Social links">
-          <a href="mailto:rprpradeesh@gmail.com" class="social-btn" role="listitem" aria-label="Email">✉</a>
+        <a href="#features" class="btn btn-outline">Explore Features ↓</a>
+      </div>
+
+      <!-- Stats bar -->
+      <div class="hero-stats" aria-label="App statistics">
+        <div class="hero-stat">
+          <div class="hero-stat-num" data-count="66" aria-label="66 Bible Books">66</div>
+          <div class="hero-stat-label">Bible Books</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num" data-count="31000" aria-label="31000 Verses">31,000</div>
+          <div class="hero-stat-label">Verses</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num" data-count="2" aria-label="2 Languages">2</div>
+          <div class="hero-stat-label">Languages</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num" aria-label="Free">Free</div>
+          <div class="hero-stat-label">Forever</div>
         </div>
       </div>
-      <div class="footer-col">
-        <h4>App</h4>
-        <ul>
-          <li><a href="index.html#features">Features</a></li>
-          <li><a href="index.html#why">Why Choose Us</a></li>
-          <li><a href="index.html#faq">FAQ</a></li>
-          <li><a href="https://play.google.com/store/apps/details?id=com.rpr.tamil_bible_app" target="_blank" rel="noopener">Download</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Legal</h4>
-        <ul>
-          <li><a href="privacy.html">Privacy Policy</a></li>
-          <li><a href="terms.html">Terms &amp; Conditions</a></li>
-          <li><a href="delete-account.html">Account Deletion</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Support</h4>
-        <ul>
-          <li><a href="contact.html">Contact Us</a></li>
-          <li><a href="mailto:rprpradeesh@gmail.com">Email Support</a></li>
-          <li><a href="index.html#faq">Help &amp; FAQ</a></li>
-        </ul>
-      </div>
     </div>
-    <div class="footer-bottom">
-      <p>© 2026 Tamil Bible App • Powered by RPR</p>
-      <div class="footer-badges">
-        <span class="badge">Firebase</span>
-        <span class="badge">Cloudinary</span>
-        <span class="badge">OneSignal</span>
-        <span class="badge">Flutter</span>
-      </div>
-    </div>
-  </div>
-</footer>
+  </section>
 
-<script src="script.js"></script>
+  <!-- ══════════════════ FEATURES ══════════════════ -->
+  <section class="section" id="features" aria-labelledby="features-title">
+    <div class="container">
+      <div class="section-center">
+        <div class="section-tag" aria-hidden="true">✦ Everything You Need</div>
+        <h2 class="section-title" id="features-title">Packed with <span class="grad">Powerful Features</span></h2>
+        <p class="section-subtitle">Every feature is built specifically for Tamil Christians to read, grow, and connect
+          in their faith journey.</p>
+      </div>
+
+      <div class="features-grid">
+
+        <!-- Bible Reading -->
+        <article class="feature-card reveal delay-1" aria-label="Full Tamil Bible">
+          <div class="feature-icon"
+            style="background:linear-gradient(135deg,rgba(59,130,246,.15),rgba(139,92,246,.15));border:1px solid rgba(59,130,246,.25);">
+            📖</div>
+          <h3 class="feature-title">Full Tamil Bible</h3>
+          <p class="feature-desc">Complete Old and New Testament — all 66 books in Tamil with verse-by-verse reading,
+            chapter navigation, and book picker.</p>
+        </article>
+
+        <!-- Audio Bible -->
+        <article class="feature-card reveal delay-2" aria-label="Audio Bible">
+          <div class="feature-icon"
+            style="background:linear-gradient(135deg,rgba(16,185,129,.15),rgba(59,130,246,.15));border:1px solid rgba(16,185,129,.25);">
+            🎧</div>
+          <h3 class="feature-title">Audio Bible</h3>
+          <p class="feature-desc">Listen to the Bible being read aloud. Control playback speed, enable auto-scroll, and
+            follow along with the text simultaneously.</p>
+        </article>
+
+        <!-- Voice Search -->
+        <article class="feature-card reveal delay-3" aria-label="Voice Search">
+          <div class="feature-icon"
+            style="background:linear-gradient(135deg,rgba(236,72,153,.15),rgba(139,92,246,.15));border:1px solid rgba(236,72,153,.25);">
+            🎙️</div>
+          <h3 class="feature-title">Voice Search</h3>
+          <p class="feature-desc">Search the entire Bible hands-free using voice input. Find verses by speaking keywords
+            or phrases in Tamil or English.</p>
+        </article>
+
+        <!-- Notes System -->
+        <article class="feature-card reveal delay-1" aria-label="Notes System">
+          <div class="feature-icon"
+            style="background:linear-gradient(135deg,rgba(251,191,36,.15),rgba(249,115,22,.15));border:1px solid rgba(251,191,36,.25);">
+            📝</div>
+          <h3 class="feature-title">Text &amp; Audio Notes</h3>
+          <p class="feature-desc">Write rich text notes with the built-in editor, or record voice memos as audio notes.
+            Export to PDF or DOCX. Synced securely to the cloud.</p>
+        </article>
+
+        <!-- Prayer Requests -->
+        <article class="feature-card reveal delay-2" aria-label="Prayer Requests">
+          <div class="feature-icon"
+            style="background:linear-gradient(135deg,rgba(139,92,246,.15),rgba(236,72,153,.15));border:1px solid rgba(139,92,246,.25);">
+            🙏</div>
+          <h3 class="feature-title">Prayer Requests</h3>
+          <p class="feature-desc">Share prayer requests with fellow believers and intercede for others. Submit requests,
+            pray for others, like, and respond in a spirit of love and fellowship.</p>
+        </article>
+
+        <!-- Prayer Reminders -->
+        <article class="feature-card reveal delay-3" aria-label="Prayer Reminders">
+          <div class="feature-icon"
+            style="background:linear-gradient(135deg,rgba(16,185,129,.15),rgba(251,191,36,.15));border:1px solid rgba(16,185,129,.25);">
+            ⏰</div>
+          <h3 class="feature-title">Prayer Reminders</h3>
+          <p class="feature-desc">Set daily prayer reminders for prayer time, Bible reading, church attendance, and
+            custom schedules with alarm sounds.</p>
+        </article>
+
+        <!-- Christian Songs -->
+        <article class="feature-card reveal delay-1" aria-label="Christian Songs">
+          <div class="feature-icon"
+            style="background:linear-gradient(135deg,rgba(249,115,22,.15),rgba(239,68,68,.15));border:1px solid rgba(249,115,22,.25);">
+            🎵</div>
+          <h3 class="feature-title">Christian Songs</h3>
+          <p class="feature-desc">Browse a curated library of Tamil Christian songs and convention songs. Copy lyrics,
+            share, and export. Organized by category.</p>
+        </article>
+
+        <!-- Bible Dictionary -->
+        <article class="feature-card reveal delay-2" aria-label="Bible Dictionary">
+          <div class="feature-icon"
+            style="background:linear-gradient(135deg,rgba(59,130,246,.15),rgba(16,185,129,.15));border:1px solid rgba(59,130,246,.25);">
+            📚</div>
+          <h3 class="feature-title">Bible Dictionary</h3>
+          <p class="feature-desc">Deep-dive into biblical words with Tamil explanations, English verse cross-references,
+            Old and New Testament occurrences, and related words.</p>
+        </article>
+
+        <!-- Verse Highlights & Bookmarks -->
+        <article class="feature-card reveal delay-3" aria-label="Verse Highlights and Bookmarks">
+          <div class="feature-icon"
+            style="background:linear-gradient(135deg,rgba(251,191,36,.15),rgba(139,92,246,.15));border:1px solid rgba(251,191,36,.25);">
+            🔖</div>
+          <h3 class="feature-title">Highlights &amp; Bookmarks</h3>
+          <p class="feature-desc">Highlight favourite verses in colour and bookmark chapters for quick access. All saved
+            securely in your personal cloud library.</p>
+        </article>
+
+        <!-- Bible Quotes -->
+        <article class="feature-card reveal delay-1" aria-label="Bible Quote Editor">
+          <div class="feature-icon"
+            style="background:linear-gradient(135deg,rgba(139,92,246,.15),rgba(59,130,246,.15));border:1px solid rgba(139,92,246,.25);">
+            🖼️</div>
+          <h3 class="feature-title">Bible Quote Cards</h3>
+          <p class="feature-desc">Create stunning Bible verse quote images with custom fonts, backgrounds, and themes.
+            Share directly to WhatsApp, Telegram, or social media.</p>
+        </article>
+
+        <!-- Daily Verse -->
+        <article class="feature-card reveal delay-2" aria-label="Daily Verse">
+          <div class="feature-icon"
+            style="background:linear-gradient(135deg,rgba(16,185,129,.15),rgba(0,212,255,.15));border:1px solid rgba(16,185,129,.25);">
+            🌅</div>
+          <h3 class="feature-title">Daily Verse</h3>
+          <p class="feature-desc">Start every day with an admin-curated daily Bible verse displayed beautifully on your
+            home screen. Refreshed daily by the ministry team.</p>
+        </article>
+
+        <!-- Dual Language -->
+        <article class="feature-card reveal delay-3" aria-label="Tamil and English Support">
+          <div class="feature-icon"
+            style="background:linear-gradient(135deg,rgba(236,72,153,.15),rgba(249,115,22,.15));border:1px solid rgba(236,72,153,.25);">
+            🌐</div>
+          <h3 class="feature-title">Tamil &amp; English</h3>
+          <p class="feature-desc">Full Tamil language support with an English language option. Switch between languages
+            instantly from the profile settings.</p>
+        </article>
+
+        <!-- Updates & Announcements -->
+        <article class="feature-card reveal delay-1" aria-label="Updates and Announcements">
+          <div class="feature-icon"
+            style="background:linear-gradient(135deg,rgba(0,212,255,.15),rgba(59,130,246,.15));border:1px solid rgba(0,212,255,.25);">
+            📢</div>
+          <h3 class="feature-title">Updates &amp; Announcements</h3>
+          <p class="feature-desc">Receive ministry announcements, pinned updates, video and image content from your
+            church or ministry admin directly in the app.</p>
+        </article>
+
+        <!-- Push Notifications -->
+        <article class="feature-card reveal delay-2" aria-label="Push Notifications">
+          <div class="feature-icon"
+            style="background:linear-gradient(135deg,rgba(139,92,246,.15),rgba(16,185,129,.15));border:1px solid rgba(139,92,246,.25);">
+            🔔</div>
+          <h3 class="feature-title">Push Notifications</h3>
+          <p class="feature-desc">Stay connected with real-time push notifications via OneSignal for prayer requests,
+            announcements, and ministry updates.</p>
+        </article>
+
+        <!-- Feedback System -->
+        <article class="feature-card reveal delay-3" aria-label="Feedback System">
+          <div class="feature-icon"
+            style="background:linear-gradient(135deg,rgba(251,191,36,.15),rgba(239,68,68,.15));border:1px solid rgba(251,191,36,.25);">
+            💬</div>
+          <h3 class="feature-title">Feedback &amp; Support</h3>
+          <p class="feature-desc">Submit bug reports, suggestions, corrections, and feature requests directly within the
+            app. Our team reviews every submission.</p>
+        </article>
+
+        <!-- Secure Cloud Account -->
+        <article class="feature-card reveal delay-1" aria-label="Secure Cloud Account">
+          <div class="feature-icon"
+            style="background:linear-gradient(135deg,rgba(16,185,129,.15),rgba(139,92,246,.15));border:1px solid rgba(16,185,129,.25);">
+            🔐</div>
+          <h3 class="feature-title">Secure Cloud Account</h3>
+          <p class="feature-desc">Sign in with Email or Google. All your notes, bookmarks, highlights, and preferences
+            sync across devices securely via Firebase.</p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════ WHY CHOOSE US ══════════════════ -->
+  <section class="section" id="why" style="background:linear-gradient(180deg,rgba(139,92,246,.04) 0%,transparent 100%);"
+    aria-labelledby="why-title">
+    <div class="container">
+      <div class="why-grid">
+        <div class="reveal-left">
+          <div class="section-tag" aria-hidden="true">✦ Why Tamil Bible App</div>
+          <h2 class="section-title" id="why-title">Built for <span class="grad">Tamil Christians</span></h2>
+          <p class="section-subtitle" style="margin-bottom:36px;">Every detail is designed with our community in mind —
+            from the language to the features to the design.</p>
+
+          <div class="why-item">
+            <div class="why-icon" aria-hidden="true">📖</div>
+            <div class="why-content">
+              <h3>Complete Tamil Bible Offline</h3>
+              <p>All 66 books — Old and New Testament — bundled within the app for offline reading without internet
+                dependency.</p>
+            </div>
+          </div>
+          <div class="why-item">
+            <div class="why-icon" aria-hidden="true">⚡</div>
+            <div class="why-content">
+              <h3>Instant Navigation</h3>
+              <p>Jump directly to any book, chapter, or verse instantly. Remembers your last reading position
+                automatically.</p>
+            </div>
+          </div>
+          <div class="why-item">
+            <div class="why-icon" aria-hidden="true">🔒</div>
+            <div class="why-content">
+              <h3>Privacy-First</h3>
+              <p>Your data is stored securely in Firebase Firestore. Your notes, prayers, and profile are fully private
+                by default.</p>
+            </div>
+          </div>
+          <div class="why-item">
+            <div class="why-icon" aria-hidden="true">🌟</div>
+            <div class="why-content">
+              <h3>Admin-Curated Content</h3>
+              <p>Daily verses, announcements, and ministry updates are managed by a dedicated admin team to keep content
+                fresh and relevant.</p>
+            </div>
+          </div>
+          <div class="why-item">
+            <div class="why-icon" aria-hidden="true">💯</div>
+            <div class="why-content">
+              <h3>Completely Free</h3>
+              <p>No ads, no subscriptions, no locked features. The full Tamil Bible experience is free for every
+                believer.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════ STATS ══════════════════ -->
+  <section class="section" aria-labelledby="stats-title">
+    <div class="container">
+      <div class="section-center">
+        <div class="section-tag" aria-hidden="true">✦ By The Numbers</div>
+        <h2 class="section-title" id="stats-title">The <span class="grad">Scripture</span> in Numbers</h2>
+      </div>
+      <div class="stats-grid">
+        <div class="stat-card reveal delay-1">
+          <span class="stat-num" data-count="66">0+</span>
+          <span class="stat-label">Bible Books</span>
+        </div>
+        <div class="stat-card reveal delay-2">
+          <span class="stat-num" data-count="1189">0+</span>
+          <span class="stat-label">Chapters</span>
+        </div>
+        <div class="stat-card reveal delay-3">
+          <span class="stat-num" data-count="31102">0+</span>
+          <span class="stat-label">Verses</span>
+        </div>
+        <div class="stat-card reveal delay-4">
+          <span class="stat-num" data-count="16">0</span>
+          <span class="stat-label">App Features</span>
+        </div>
+        <div class="stat-card reveal delay-5">
+          <span class="stat-num" data-count="2">0</span>
+          <span class="stat-label">Languages</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════ APP SHOWCASE / SCREENSHOTS ══════════════════ -->
+  <section class="section" id="screenshots" aria-labelledby="showcase-title"
+    style="background: linear-gradient(180deg, rgba(139,92,246,.03) 0%, transparent 100%);">
+    <div class="container">
+      <div class="section-center">
+        <div class="section-tag" aria-hidden="true">✦ Actual App Screenshots</div>
+        <h2 class="section-title" id="showcase-title">Experience the <span class="grad">App in Action</span></h2>
+        <p class="section-subtitle">Take a look inside the Tamil Bible Android app — designed with sleek dark mode
+          visuals, intuitive navigation, and rich study tools.</p>
+      </div>
+
+      <!-- Phone Mockups Showcase Grid -->
+      <div class="showcase-grid">
+
+        <!-- Screenshot 1: Home & Cross Mountain -->
+        <div class="showcase-card reveal delay-1">
+          <div class="phone-frame">
+            <div class="phone-screen">
+              <img src="assets/screen_home.png" alt="Tamil Bible App Home Screen - Mountain Cross & Daily Verse"
+                loading="lazy" />
+            </div>
+          </div>
+          <div class="showcase-caption">
+            <h3>Home & Verse Reader</h3>
+            <p>Beautiful dark theme with quick access to Continue Reading, daily Bible words search, and verse
+              navigation.</p>
+          </div>
+        </div>
+
+        <!-- Screenshot 2: Features Grid -->
+        <div class="showcase-card reveal delay-2">
+          <div class="phone-frame">
+            <div class="phone-screen">
+              <img src="assets/screen_features.jpg" alt="Tamil Bible App Features Grid" loading="lazy" />
+            </div>
+          </div>
+          <div class="showcase-caption">
+            <h3>Christian Tools Hub</h3>
+            <p>Instant access to Bible Quotes, Bookmarks, Highlights, Prayer Requests, Dictionary, Songs, and Audio
+              Bible.</p>
+          </div>
+        </div>
+
+        <!-- Screenshot 3: Books Screen -->
+        <div class="showcase-card reveal delay-3">
+          <div class="phone-frame">
+            <div class="phone-screen">
+              <img src="assets/screen_books.png" alt="Tamil Bible Books & Testaments Screen" loading="lazy" />
+            </div>
+          </div>
+          <div class="showcase-caption">
+            <h3>Books & Testaments</h3>
+            <p>Effortlessly browse 66 Bible books with clean filters for Old Testament and New Testament.</p>
+          </div>
+        </div>
+
+        <!-- Screenshot 4: Word Study Detail -->
+        <div class="showcase-card reveal delay-4">
+          <div class="phone-frame">
+            <div class="phone-screen">
+              <img src="assets/screen_word_study.png" alt="Tamil Bible Word Study & Dictionary Screen" loading="lazy" />
+            </div>
+          </div>
+          <div class="showcase-caption">
+            <h3>Word Study & Dictionary</h3>
+            <p>Deep dive into Bible terms with Tamil meanings, related English words, confidence scores, and statistics.
+            </p>
+          </div>
+        </div>
+
+        <!-- Screenshot 5: Navigation Drawer -->
+        <div class="showcase-card reveal delay-5">
+          <div class="phone-frame">
+            <div class="phone-screen">
+              <img src="assets/screen_drawer.png" alt="Tamil Bible App Quick Drawer Navigation" loading="lazy" />
+            </div>
+          </div>
+          <div class="showcase-caption">
+            <h3>Drawer Navigation</h3>
+            <p>Quick side menu for seamlessly switching between Prayer Requests, Notes, Songs, and Reminders.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════ FAQ ══════════════════ -->
+  <section class="section" id="faq" aria-labelledby="faq-title">
+    <div class="container">
+      <div class="section-center">
+        <div class="section-tag" aria-hidden="true">✦ Questions</div>
+        <h2 class="section-title" id="faq-title">Frequently <span class="grad">Asked Questions</span></h2>
+      </div>
+      <div class="faq-list" role="list">
+
+        <div class="faq-item" role="listitem">
+          <button class="faq-question" aria-expanded="false">
+            Is Tamil Bible App free to use?
+            <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              aria-hidden="true">
+              <path d="M6 9l6 6 6-6" />
+            </svg>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">Yes, Tamil Bible App is completely free to download and use. There are no
+              hidden fees, subscriptions, or locked features. All 66 Bible books, Audio Bible, Notes, Prayer Requests,
+              Songs, and every other feature is available for free.</div>
+          </div>
+        </div>
+
+        <div class="faq-item" role="listitem">
+          <button class="faq-question" aria-expanded="false">
+            Do I need an account to use the app?
+            <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              aria-hidden="true">
+              <path d="M6 9l6 6 6-6" />
+            </svg>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">You can browse the Bible without an account. However, to save Notes,
+              Bookmarks, Highlights, Prayer Requests, and sync your progress across devices, you will need to sign in
+              using your Email or Google account.</div>
+          </div>
+        </div>
+
+        <div class="faq-item" role="listitem">
+          <button class="faq-question" aria-expanded="false">
+            Can I read the Bible offline?
+            <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              aria-hidden="true">
+              <path d="M6 9l6 6 6-6" />
+            </svg>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">Yes! The entire Tamil Bible text (all 66 books) is bundled within the app for
+              offline reading. You do not need an internet connection to read the Bible. Some features like Prayer
+              Requests, Updates, and syncing Notes require internet access.</div>
+          </div>
+        </div>
+
+        <div class="faq-item" role="listitem">
+          <button class="faq-question" aria-expanded="false">
+            Is my data private and secure?
+            <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              aria-hidden="true">
+              <path d="M6 9l6 6 6-6" />
+            </svg>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">Absolutely. Your personal data (notes, bookmarks, highlights, prayer requests)
+              is stored securely in Firebase Firestore with role-based security rules. We never sell your data to third
+              parties. Profile images are hosted on Cloudinary with secure URLs. Read our <a href="privacy.html">Privacy
+                Policy</a> for full details.</div>
+          </div>
+        </div>
+
+        <div class="faq-item" role="listitem">
+          <button class="faq-question" aria-expanded="false">
+            What languages does the app support?
+            <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              aria-hidden="true">
+              <path d="M6 9l6 6 6-6" />
+            </svg>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">Tamil Bible App supports Tamil (தமிழ்) and English. You can switch the
+              interface language at any time from your Profile settings. The Bible content is available in Tamil
+              throughout, with English cross-references in the Bible Dictionary.</div>
+          </div>
+        </div>
+
+        <div class="faq-item" role="listitem">
+          <button class="faq-question" aria-expanded="false">
+            How do I delete my account?
+            <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              aria-hidden="true">
+              <path d="M6 9l6 6 6-6" />
+            </svg>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">You can request account deletion by visiting our <a
+                href="delete-account.html">Account Deletion page</a> or contacting support through our <a
+                href="contact.html">Contact Page</a>. Upon verification, all your personal data
+              including notes, bookmarks, highlights, prayer requests, and Firebase Authentication credentials will be
+              permanently deleted within 30 days.</div>
+          </div>
+        </div>
+
+        <div class="faq-item" role="listitem">
+          <button class="faq-question" aria-expanded="false">
+            How do I become an admin or moderator?
+            <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              aria-hidden="true">
+              <path d="M6 9l6 6 6-6" />
+            </svg>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">Admin and Super Admin roles are assigned exclusively by the ministry team via
+              the Admin App. User roles are managed securely in Firestore and cannot be self-assigned. Contact us if
+              your ministry would like to partner with us.</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════ DOWNLOAD ══════════════════ -->
+  <section class="download-section" id="download" aria-labelledby="download-title">
+    <div class="blob blob-purple" style="width:400px;height:400px;top:-100px;left:-100px;" aria-hidden="true"></div>
+    <div class="blob blob-blue" style="width:350px;height:350px;bottom:-80px;right:-80px;" aria-hidden="true"></div>
+    <div class="container" style="position:relative;z-index:1;">
+      <div class="section-tag" style="margin:0 auto 16px;" aria-hidden="true">✦ Get the App</div>
+      <h2 class="section-title reveal" id="download-title">Download <span class="grad">Tamil Bible App</span></h2>
+      <p class="section-subtitle reveal" style="margin:0 auto 8px;">Free for Android. Start reading God's Word in Tamil
+        today.</p>
+      <p class="reveal" style="color:var(--text-muted);font-size:0.8125rem;margin-bottom:32px;">Package:
+        com.rpr.tamil_bible_app</p>
+      <div class="download-actions reveal">
+        <a href="https://play.google.com/store/apps/details?id=com.rpr.tamil_bible_app" class="play-store-btn"
+          target="_blank" rel="noopener noreferrer" aria-label="Download Tamil Bible App on Google Play">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M3 20.5v-17l17.5 8.5L3 20.5z" fill="#EA4335" />
+            <path d="M3 3.5l9.9 9.9-9.9 7.1V3.5z" fill="#FBBC04" />
+            <path d="M3 20.5l9.9-9.9 3.6 3.6L3 20.5z" fill="#34A853" />
+            <path d="M3 3.5l13.5 6.9-3.6 3.6L3 3.5z" fill="#4285F4" />
+          </svg>
+          <span class="play-store-btn-text">
+            <small>GET IT ON</small>
+            Google Play
+          </span>
+        </a>
+        <a href="contact.html" class="btn btn-outline">📧 Contact Us</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════ FOOTER ══════════════════ -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo" style="display:inline-flex;margin-bottom:0;">
+            <div class="nav-logo-icon" aria-hidden="true">
+              <img src="assets/app_icon.png" alt="Tamil Bible Logo" />
+            </div>
+            <span class="nav-logo-text"><span>Tamil</span> Bible</span>
+          </a>
+          <p>A premium Tamil Bible application built for the Tamil Christian community. Read, listen, worship, and grow
+            in faith.</p>
+          <div class="footer-social" role="list" aria-label="Social links">
+            <a href="contact.html" class="social-btn" role="listitem" aria-label="Contact Support">✉</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>App</h4>
+          <ul>
+            <li><a href="index.html#features">Features</a></li>
+            <li><a href="index.html#why">Why Choose Us</a></li>
+            <li><a href="index.html#faq">FAQ</a></li>
+            <li><a href="https://play.google.com/store/apps/details?id=com.rpr.tamil_bible_app" target="_blank"
+                rel="noopener">Download</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms &amp; Conditions</a></li>
+            <li><a href="delete-account.html">Account Deletion</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="contact.html">Email Support</a></li>
+            <li><a href="index.html#faq">Help &amp; FAQ</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Tamil Bible App • Powered by RPR</p>
+        <div class="footer-badges">
+          <span class="badge">Firebase</span>
+          <span class="badge">Cloudinary</span>
+          <span class="badge">OneSignal</span>
+          <span class="badge">Flutter</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
+
 </html>

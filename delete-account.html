@@ -10,14 +10,13 @@
   <meta property="og:title" content="Delete Account — Tamil Bible App"/>
   <meta property="og:url" content="https://tamilbibleapp.com/delete-account.html"/>
   <meta name="theme-color" content="#8b5cf6"/>
-  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg"/>
+  <link rel="icon" type="image/png" href="assets/favicon.png"/>
   <link rel="manifest" href="manifest.json"/>
   <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-
 <div id="loading-screen" role="status" aria-label="Loading">
-  <div class="loader-cross" aria-hidden="true"></div>
+  <img src="assets/app_icon.png" alt="Tamil Bible App" class="loader-logo" />
   <p class="loader-text">Tamil Bible App</p>
 </div>
 <button id="scroll-top" aria-label="Scroll to top">
@@ -27,7 +26,9 @@
 <nav class="navbar" role="navigation" aria-label="Main navigation">
   <div class="nav-container">
     <a href="index.html" class="nav-logo" aria-label="Tamil Bible App home">
-      <div class="nav-logo-icon" aria-hidden="true">✝</div>
+      <div class="nav-logo-icon" aria-hidden="true">
+        <img src="assets/app_icon.png" alt="Tamil Bible Logo" />
+      </div>
       <span class="nav-logo-text"><span>Tamil</span> Bible</span>
     </a>
     <ul class="nav-links" id="nav-menu" role="list">
@@ -46,34 +47,21 @@
   </div>
 </nav>
 
-<section class="legal-hero" aria-labelledby="page-title">
-  <div class="blob blob-purple" style="width:400px;height:400px;top:-100px;right:-100px;" aria-hidden="true"></div>
+<!-- Hero -->
+<section class="legal-hero" aria-labelledby="delete-title">
+  <div class="blob blob-purple" style="width:350px;height:350px;top:-80px;left:-80px;" aria-hidden="true"></div>
   <div class="container" style="position:relative;z-index:1;">
-    <div class="section-tag" style="margin:0 auto 16px;" aria-hidden="true">🗑️ Account</div>
-    <h1 class="section-title" id="page-title">Account <span class="grad">Deletion Policy</span></h1>
-    <p class="section-subtitle" style="margin:12px auto 20px;">Understand how to delete your Tamil Bible App account and what happens to your data.</p>
-    <div class="last-updated">🟢 Last updated: July 2026</div>
+    <div class="section-tag" style="margin:0 auto 16px;" aria-hidden="true">🗑️ Account Management</div>
+    <h1 class="section-title" id="delete-title">Account Deletion <span class="grad">Request</span></h1>
+    <p class="section-subtitle" style="margin:12px auto 0;">Learn how to request deletion of your Tamil Bible App account and data, or submit your deletion request directly below.</p>
   </div>
 </section>
 
 <main class="legal-body">
   <div class="container">
-    <div class="legal-content">
+    <div class="legal-card">
 
-      <div class="legal-section">
-        <p>At Tamil Bible App, we respect your right to control your personal data. This page explains how to request the deletion of your account and all associated data, what data is deleted, what may be retained, and the processing timeline.</p>
-      </div>
-
-      <!-- Warning -->
-      <div class="delete-warning" role="alert">
-        <div class="delete-warning-icon" aria-hidden="true">⚠️</div>
-        <div>
-          <strong style="color:#f87171;">This action is permanent and cannot be undone.</strong>
-          <p style="font-size:0.9rem;color:var(--text-secondary);margin-top:4px;">Once your account deletion request is confirmed and processed, all your personal data will be permanently erased. Your notes, audio recordings, bookmarks, highlights, prayer requests, and profile information cannot be recovered.</p>
-        </div>
-      </div>
-
-      <!-- How to delete -->
+      <!-- How to request -->
       <div class="legal-section">
         <h2>How to Request Account Deletion</h2>
         <p>You can request deletion through any of the following methods:</p>
@@ -89,8 +77,8 @@
           <div class="delete-step" role="listitem">
             <div class="step-num" aria-hidden="true">2</div>
             <div class="step-content">
-              <h4>Email Us Directly</h4>
-              <p>Send an email to <a href="mailto:rprpradeesh@gmail.com" style="color:var(--violet);">rprpradeesh@gmail.com</a> from your registered email address with the subject line "Account Deletion Request". Include your full name and registered email.</p>
+              <h4>Contact Us Directly</h4>
+              <p>Submit your request using our form below or reach out via our <a href="contact.html" style="color:var(--violet);">Contact Page</a> with the subject line "Account Deletion Request". Include your full name and registered email.</p>
             </div>
           </div>
           <div class="delete-step" role="listitem">
@@ -209,6 +197,8 @@
         <h2>Submit Account Deletion Request</h2>
         <p>Fill out this form to initiate your account deletion. We will send a verification email to your registered address.</p>
 
+        <div id="delete-status-alert" style="display:none;padding:16px 20px;border-radius:12px;margin-top:20px;margin-bottom:20px;font-size:0.875rem;line-height:1.5;"></div>
+
         <form id="delete-form" style="margin-top:24px;" novalidate>
           <div class="contact-form">
             <div class="form-group">
@@ -255,7 +245,7 @@
         <h2>Need Help?</h2>
         <p>If you have any questions about the account deletion process or need assistance, please contact us:</p>
         <ul>
-          <li><strong>Email:</strong> <a href="mailto:rprpradeesh@gmail.com">rprpradeesh@gmail.com</a></li>
+          <li><strong>Email:</strong> <span style="color:var(--violet);">rprpradeesh@gmail.com</span></li>
           <li><strong>Contact Form:</strong> <a href="contact.html">Contact Page</a></li>
           <li><strong>Response Time:</strong> We typically respond within 2 business days</li>
         </ul>
@@ -279,6 +269,7 @@
   </div>
 </footer>
 
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <script src="script.js"></script>
 </body>
 </html>
