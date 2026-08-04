@@ -1,7 +1,7 @@
 {
   "name": "Tamil Bible App",
   "short_name": "Tamil Bible",
-  "description": "A premium Tamil Bible application for Android. Read, listen, worship and grow in faith.",
+  "description": "A premium Tamil Bible application for Android. Read, listen, stay and grow in faith.",
   "start_url": "/index.html",
   "display": "standalone",
   "background_color": "#050816",

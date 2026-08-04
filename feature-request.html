@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Suggest a Feature — Tamil Bible App</title>
+  <meta name="description"
+    content="Have an idea for the Tamil Bible App? Suggest new features, vote on upcoming ideas, and help shape future app updates." />
+  <meta name="keywords" content="Suggest Feature Tamil Bible, Tamil Bible Wishlist, Feature Request App, Feedback" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://pratheesh0005.github.io/Tamil_Bible_Website/feature-request.html" />
+  <meta property="og:title" content="Suggest a Feature — Tamil Bible App" />
+  <meta property="og:description" content="Share your suggestions and ideas for future Tamil Bible App updates." />
+  <meta property="og:url" content="https://pratheesh0005.github.io/Tamil_Bible_Website/feature-request.html" />
+  <meta name="theme-color" content="#8b5cf6" />
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <div id="loading-screen" role="status" aria-label="Loading">
+    <img src="assets/app_icon.png" alt="Tamil Bible App" class="loader-logo" />
+    <p class="loader-text">Tamil Bible App</p>
+  </div>
+
+  <button id="scroll-top" aria-label="Scroll to top">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M12 4l8 8h-6v8h-4v-8H4z" />
+    </svg>
+  </button>
+
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo" aria-label="Tamil Bible App home">
+        <div class="nav-logo-icon" aria-hidden="true">
+          <img src="assets/app_icon.png" alt="Tamil Bible Logo" />
+        </div>
+        <span class="nav-logo-text"><span>Tamil</span> Bible</span>
+      </a>
+      <ul class="nav-links" id="nav-menu" role="list">
+        <li><a href="index.html#features">Features</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="feature-request.html" class="active">Suggestions</a></li>
+        <li><a href="report-bug.html">Report Bug</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="https://play.google.com/store/apps/details?id=com.rpr.tamil_bible_app" class="btn-nav" target="_blank" rel="noopener">⬇ Download</a>
+        <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <section class="legal-hero" style="padding:120px 0 50px;">
+    <div class="container text-center">
+      <div class="section-tag" aria-hidden="true" style="color:var(--amber);border-color:rgba(245,158,11,.3);">💡 Community Ideas</div>
+      <h1 class="hero-title" style="font-size:clamp(2.2rem,5vw,3.5rem);margin-bottom:16px;">Suggest a <span class="grad" style="background:linear-gradient(135deg,#f59e0b,#fbbf24);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Feature</span></h1>
+      <p class="hero-desc" style="max-width:600px;margin:0 auto;">We love building features our users care about most. Share your ideas and help shape the next version of Tamil Bible App!</p>
+    </div>
+  </section>
+
+  <main class="legal-body">
+    <div class="container" style="max-width:850px;">
+
+      <!-- Suggestion Form -->
+      <div class="glass-card" style="padding:36px;margin-bottom:50px;">
+        <h2 style="font-size:1.4rem;margin-bottom:20px;color:var(--text-primary);">Submit Your Idea</h2>
+        <form id="feature-form">
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;margin-bottom:20px;">
+            
+            <div>
+              <label style="display:block;margin-bottom:8px;font-size:0.875rem;color:var(--text-secondary);font-weight:600;">Your Name</label>
+              <input type="text" id="feat-name" required placeholder="Enter your name" style="width:100%;padding:12px 16px;background:rgba(255,255,255,0.04);border:1px solid var(--border);border-radius:12px;color:var(--text-primary);font-size:0.95rem;" />
+            </div>
+
+            <div>
+              <label style="display:block;margin-bottom:8px;font-size:0.875rem;color:var(--text-secondary);font-weight:600;">Email Address</label>
+              <input type="email" id="feat-email" required placeholder="your.email@example.com" style="width:100%;padding:12px 16px;background:rgba(255,255,255,0.04);border:1px solid var(--border);border-radius:12px;color:var(--text-primary);font-size:0.95rem;" />
+            </div>
+
+          </div>
+
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;margin-bottom:20px;">
+            
+            <div>
+              <label style="display:block;margin-bottom:8px;font-size:0.875rem;color:var(--text-secondary);font-weight:600;">Feature Category</label>
+              <select id="feat-category" style="width:100%;padding:12px 16px;background:rgba(255,255,255,0.04);border:1px solid var(--border);border-radius:12px;color:var(--text-primary);font-size:0.95rem;">
+                <option value="Bible Reader & Parallel View" style="background:#0d1520;">Bible Reader & Parallel View</option>
+                <option value="Audio Bible & Offline Sync" style="background:#0d1520;">Audio Bible & Offline Sync</option>
+                <option value="Reading Plans & Certificates" style="background:#0d1520;">Reading Plans & Certificates</option>
+                <option value="Christian Hymns & Song Sheets" style="background:#0d1520;">Christian Hymns & Song Sheets</option>
+                <option value="Homescreen Widgets" style="background:#0d1520;">Homescreen Widgets</option>
+                <option value="Social & Image Sharing" style="background:#0d1520;">Social & Image Sharing</option>
+                <option value="Other Category" style="background:#0d1520;">Other Category</option>
+              </select>
+            </div>
+
+            <div>
+              <label style="display:block;margin-bottom:8px;font-size:0.875rem;color:var(--text-secondary);font-weight:600;">Feature Title</label>
+              <input type="text" id="feat-title" required placeholder="Short summary of your idea" style="width:100%;padding:12px 16px;background:rgba(255,255,255,0.04);border:1px solid var(--border);border-radius:12px;color:var(--text-primary);font-size:0.95rem;" />
+            </div>
+
+          </div>
+
+          <div style="margin-bottom:20px;">
+            <label style="display:block;margin-bottom:8px;font-size:0.875rem;color:var(--text-secondary);font-weight:600;">Detailed Description & Benefits</label>
+            <textarea id="feat-desc" rows="5" required placeholder="Explain how this feature would work and why it would be helpful to Tamil Bible users..." style="width:100%;padding:12px 16px;background:rgba(255,255,255,0.04);border:1px solid var(--border);border-radius:12px;color:var(--text-primary);font-size:0.95rem;resize:vertical;"></textarea>
+          </div>
+
+          <div id="feat-status" style="margin-bottom:20px;display:none;padding:12px;border-radius:10px;font-size:0.9rem;text-align:center;"></div>
+
+          <button type="submit" class="btn-primary" style="width:100%;padding:14px;font-size:1rem;background:linear-gradient(135deg,#f59e0b,#d97706);border:none;">
+            💡 Send Feature Suggestion
+          </button>
+        </form>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-bottom" style="border-top:1px solid var(--border);padding:24px 0;margin-top:80px;">
+        <p>© 2026 Tamil Bible App</p>
+        <div class="footer-badges">
+          <a href="privacy.html" class="badge">Privacy</a>
+          <a href="terms.html" class="badge">Terms</a>
+          <a href="faq.html" class="badge">FAQ</a>
+          <a href="report-bug.html" class="badge">Report Bug</a>
+          <a href="feature-request.html" class="badge" style="color:var(--amber);border-color:rgba(245,158,11,.3);">Suggest Feature</a>
+          <a href="about.html" class="badge">About</a>
+          <a href="contact.html" class="badge">Contact</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script src="script.js"></script>
+  <script>
+    document.getElementById('feature-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = document.getElementById('feat-name').value;
+      const email = document.getElementById('feat-email').value;
+      const category = document.getElementById('feat-category').value;
+      const title = document.getElementById('feat-title').value;
+      const desc = document.getElementById('feat-desc').value;
+
+      const subject = encodeURIComponent(`[FEATURE SUGGESTION] ${title} - Tamil Bible App`);
+      const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nCategory: ${category}\nTitle: ${title}\n\nDescription & Benefits:\n${desc}`);
+
+      window.location.href = `mailto:rprpradeesh@gmail.com?subject=${subject}&body=${body}`;
+
+      const statusEl = document.getElementById('feat-status');
+      statusEl.style.display = 'block';
+      statusEl.style.background = 'rgba(245,158,11,0.15)';
+      statusEl.style.border = '1px solid rgba(245,158,11,0.4)';
+      statusEl.style.color = '#fbbf24';
+      statusEl.innerHTML = 'Thank you for your suggestion! Opening your email client to send your idea to our team...';
+    });
+  </script>
+</body>
+
+</html>

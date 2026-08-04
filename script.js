@@ -117,12 +117,12 @@ document.querySelectorAll('.faq-question').forEach(btn => {
 });
 
 /* ============================================================
-   EmailJS Integration (No Mailto Links / Email Apps)
+   EmailJS Integration — Production Configuration
    ============================================================ */
 
 const PUBLIC_KEY = "Ut7ujiC-7YQYrne6C";
 const SERVICE_ID = "service_wuhg9g2";
-const TEMPLATE_ID = "__ejs-test-mail-service__";
+const TEMPLATE_ID = "template_pzpq909";
 
 // Initialize EmailJS SDK
 if (typeof emailjs !== 'undefined') {
@@ -237,45 +237,49 @@ if (deleteForm) {
     }
 
     const templateParams = {
-      full_name: sanitizeInput(fullName),
+      from_name: sanitizeInput(fullName),
+      from_email: sanitizeInput(email),
+      name: sanitizeInput(fullName),
       email: sanitizeInput(email),
-      firebase_uid: sanitizeInput(firebaseUid) || 'Not Provided',
-      reason: sanitizeInput(reason) || 'Not Specified',
-      additional_information: sanitizeInput(additionalInfo) || 'None',
+      message: `REQUEST TYPE: Account Deletion\nFirebase UID: ${sanitizeInput(firebaseUid) || 'Not Provided'}\nReason: ${sanitizeInput(reason) || 'Not Specified'}\n\nAdditional Information:\n${sanitizeInput(additionalInfo) || 'None'}`,
+      subject: `Account Deletion Request — ${sanitizeInput(fullName)}`,
       request_date: new Date().toLocaleString(),
-      browser: navigator.userAgent,
-      platform: navigator.platform
     };
 
+    let sentSuccessfully = false;
     try {
       if (typeof emailjs !== 'undefined') {
         await emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams);
-      } else {
-        throw new Error('EmailJS SDK is not loaded. Please check your internet connection.');
+        sentSuccessfully = true;
       }
+    } catch (err) {
+      console.warn('EmailJS delete-account attempt failed, using mailto fallback:', err);
+    }
 
+    if (sentSuccessfully) {
       showFormAlert(
         statusAlert,
         'success',
         '✅ <strong>Your account deletion request has been submitted successfully.</strong> We will review your request and contact you via your registered email address.'
       );
-
       deleteForm.reset();
       resetCustomSelects(deleteForm);
+    } else {
+      const mailtoSubject = encodeURIComponent(`[ACCOUNT DELETION REQUEST] ${fullName}`);
+      const mailtoBody = encodeURIComponent(`Full Name: ${fullName}\nRegistered Email: ${email}\nFirebase UID: ${firebaseUid}\nReason: ${reason}\n\nAdditional Information:\n${additionalInfo}`);
+      window.location.href = `mailto:rprpradeesh@gmail.com?subject=${mailtoSubject}&body=${mailtoBody}`;
 
-    } catch (err) {
-      console.error('Account Deletion submit error:', err);
       showFormAlert(
         statusAlert,
-        'error',
-        '❌ <strong>Failed to submit request.</strong> Please check your connection and try again.'
+        'success',
+        '🗑️ <strong>Opening your email app...</strong> If your email client does not open automatically, please send your email directly to <a href="mailto:rprpradeesh@gmail.com" style="color:#6ee7b7;text-decoration:underline;">rprpradeesh@gmail.com</a>.'
       );
-    } finally {
-      isSubmittingDelete = false;
-      if (submitBtn) {
-        submitBtn.disabled = false;
-        submitBtn.innerHTML = originalBtnHtml;
-      }
+    }
+
+    isSubmittingDelete = false;
+    if (submitBtn) {
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = originalBtnHtml;
     }
   });
 }
@@ -338,46 +342,50 @@ if (contactForm) {
     }
 
     const templateParams = {
-      full_name: sanitizeInput(fullName),
+      from_name: sanitizeInput(fullName),
+      from_email: sanitizeInput(email),
+      name: sanitizeInput(fullName),
       email: sanitizeInput(email),
-      reason: sanitizeInput(messageType) || 'General Support',
+      message: `Type: ${sanitizeInput(messageType) || 'General Support'}\nSubject: ${sanitizeInput(subject)}\nDevice: ${sanitizeInput(device) || 'N/A'}\n\n${sanitizeInput(message)}`,
       subject: sanitizeInput(subject),
-      additional_information: sanitizeInput(message),
-      device: sanitizeInput(device) || 'N/A',
       request_date: new Date().toLocaleString(),
-      browser: navigator.userAgent,
-      platform: navigator.platform
     };
 
+    let sentSuccessfully = false;
     try {
       if (typeof emailjs !== 'undefined') {
         await emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams);
-      } else {
-        throw new Error('EmailJS SDK is not loaded. Please check your internet connection.');
+        sentSuccessfully = true;
       }
+    } catch (err) {
+      console.warn('EmailJS attempt failed, using mailto fallback:', err);
+    }
+
+    if (sentSuccessfully) {
+      showFormAlert(
+        statusAlert,
+        'success',
+        '✅ <strong>Thank you! Your message has been sent successfully.</strong> We will get back to you within 2 business days.'
+      );
+      contactForm.reset();
+      resetCustomSelects(contactForm);
+    } else {
+      // Fallback: open email client pre-filled
+      const mailtoSubject = encodeURIComponent(`[${messageType.toUpperCase()}] ${subject}`);
+      const mailtoBody = encodeURIComponent(`Name: ${fullName}\nEmail: ${email}\nType: ${messageType}\nDevice: ${device}\n\nMessage:\n${message}`);
+      window.location.href = `mailto:rprpradeesh@gmail.com?subject=${mailtoSubject}&body=${mailtoBody}`;
 
       showFormAlert(
         statusAlert,
         'success',
-        '✅ <strong>Your message has been submitted successfully.</strong> We will review your message and contact you via your email address.'
+        '📩 <strong>Opening your email app...</strong> If it does not open, email us directly at <a href="mailto:rprpradeesh@gmail.com" style="color:#6ee7b7;text-decoration:underline;">rprpradeesh@gmail.com</a>'
       );
+    }
 
-      contactForm.reset();
-      resetCustomSelects(contactForm);
-
-    } catch (err) {
-      console.error('Contact submit error:', err);
-      showFormAlert(
-        statusAlert,
-        'error',
-        '❌ <strong>Failed to send message.</strong> Please check your connection and try again.'
-      );
-    } finally {
-      isSubmittingContact = false;
-      if (submitBtn) {
-        submitBtn.disabled = false;
-        submitBtn.innerHTML = originalBtnHtml;
-      }
+    isSubmittingContact = false;
+    if (submitBtn) {
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = originalBtnHtml;
     }
   });
 }
